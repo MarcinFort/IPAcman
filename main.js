@@ -1,12 +1,14 @@
+import { consonants, vowels } from './RP_segments_api.js';
+
 $(document).ready(() => {
-    
+    console.log(consonants);
     // Build the board
 
     let $board = $('#container');
     let $table = $('<table>');
-    for (i = 0; i < 20; i++) {
+    for (let i = 0; i < 20; i++) {
         let $tr = $('<tr>');
-        for (j = 0; j < 30; j++) {
+        for (let j = 0; j < 30; j++) {
             let $td = $('<td>').addClass('cell');
             $tr.append($td);
         }
@@ -45,7 +47,7 @@ $(document).ready(() => {
     $('table > tr:first > td:first').addClass('pacman');
 
     $(document).keydown(function (e) {
-        $pacman = $('.pacman');
+        let $pacman = $('.pacman');
         if (e.keyCode > 36 && e.keyCode < 41) {
             e.preventDefault();
             movement($pacman, e.keyCode, 'pacman');

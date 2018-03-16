@@ -16,8 +16,6 @@ $(document).ready(() => {
 
     // Movement functions
 
-    const UP = 38, DOWN = 40, LEFT = 37, RIGHT = 39;
-
     const moveLeft = (el => el.prev());
     const moveRight = (el => el.next());
     const moveUp = (el => el.parent().prev().find('td').eq(el.index()));
@@ -26,13 +24,13 @@ $(document).ready(() => {
     function movement(el, direction, elClass) {
         let target = null;
         switch(direction) {
-            case LEFT:
+            case 37:
                 target = moveLeft(el);
                 break;
-            case UP:
+            case 38:
                 target = moveUp(el);
                 break;
-            case RIGHT:
+            case 39:
                 target = moveRight(el);
                 break;
             default:
@@ -43,6 +41,17 @@ $(document).ready(() => {
             el.removeClass(elClass);
         }
     }
+
+    $('table > tr:first > td:first').addClass('pacman');
+
+    $(document).keydown(function (e) {
+        $pacman = $('.pacman');
+        if (e.keyCode > 36 && e.keyCode < 41) {
+            e.preventDefault();
+            movement($pacman, e.keyCode, 'pacman');
+        }
+    });
+    
 
     
 

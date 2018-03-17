@@ -38,7 +38,7 @@ $(document).ready(() => {
             default:
                 target = moveDown(el);
         }
-        console.log(elClass2);
+
         if (target.length > 0) {
             target.addClass(elClass1);
             el.removeClass(elClass1);

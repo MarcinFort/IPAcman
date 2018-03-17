@@ -4,6 +4,10 @@
     height: 30px;
 }
 
+.pacman {
+    background-repeat: no-repeat;
+}
+
 .pacman.right {
     background-image: url(assets/pacman-right.png);
 }

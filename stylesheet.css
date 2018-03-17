@@ -4,6 +4,19 @@
     height: 30px;
 }
 
-.pacman {
-    background-color: red;
+.pacman.right {
+    background-image: url(assets/pacman-right.png);
 }
+
+.pacman.left {
+    background-image: url(assets/pacman-left.png);
+}
+
+.pacman.up {
+    background-image: url(assets/pacman-up.png);
+}
+
+.pacman.down {
+    background-image: url(assets/pacman-down.png);
+}
+

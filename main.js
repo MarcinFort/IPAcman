@@ -1,7 +1,7 @@
 import { consonants, vowels } from './RP_segments_api.js';
 
 $(document).ready(() => {
-    console.log(consonants);
+
     // Build the board
 
     let $board = $('#container');
@@ -23,7 +23,7 @@ $(document).ready(() => {
     const moveUp = (el => el.parent().prev().find('td').eq(el.index()));
     const moveDown = (el => el.parent().next().find('td').eq(el.index()));
 
-    function movement(el, direction, elClass) {
+    function movement(el, direction, elClass1, elClass2) {
         let target = null;
         switch(direction) {
             case 37:
@@ -38,23 +38,41 @@ $(document).ready(() => {
             default:
                 target = moveDown(el);
         }
+        console.log(elClass2);
         if (target.length > 0) {
-            target.addClass(elClass);
-            el.removeClass(elClass);
+            target.addClass(elClass1);
+            el.removeClass(elClass1);
+            if (elClass2) {
+                target.addClass(elClass2);
+                el.removeClass(elClass2);
+            }
         }
     }
 
-    $('table > tr:first > td:first').addClass('pacman');
+    $('table > tr:first > td:first').addClass('pacman right');
 
     $(document).keydown(function (e) {
         let $pacman = $('.pacman');
+        let elClass2;
         if (e.keyCode > 36 && e.keyCode < 41) {
             e.preventDefault();
-            movement($pacman, e.keyCode, 'pacman');
+            $pacman.removeClass('left right up down');
+            switch(e.keyCode) {
+                case 37:
+                    elClass2 = 'left';
+                    break;
+                case 38:
+                    elClass2 = 'up';
+                    break;
+                case 39:
+                    elClass2 = 'right';
+                    break;
+                default:
+                    elClass2 = 'down';
+            }
+            $pacman.addClass(elClass2);
+            movement($pacman, e.keyCode, 'pacman', elClass2);
         }
     });
-    
-
-    
 
 });

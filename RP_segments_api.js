@@ -1,7 +1,8 @@
 export const consonants = [
 
 {
-    name: "m",
+    sampa: "m",
+    ipa: "m",
     place: "bilabial",
     manner: "nasal",
     class: "sonorant",
@@ -9,7 +10,8 @@ export const consonants = [
 },
 
 {
-    name: "b",
+    sampa: "b",
+    ipa: "b",
     place: "bilabial",
     manner: "plosive",
     class: "obstruent",
@@ -17,7 +19,8 @@ export const consonants = [
 },
 
 {
-    name: "p",
+    sampa: "p",
+    ipa: "p",
     place: "bilabial",
     manner: "plosive",
     class: "obstruent",
@@ -25,7 +28,8 @@ export const consonants = [
 },
 
 {
-    name: "v",
+    sampa: "v",
+    ipa: "v",
     place: "labiodental",
     manner: "fricative",
     class: "obstruent",
@@ -33,7 +37,8 @@ export const consonants = [
 },
 
 {
-    name: "f",
+    sampa: "f",
+    ipa: "f",
     place: "labiodental",
     manner: "fricative",
     class: "obstruent",
@@ -41,7 +46,8 @@ export const consonants = [
 },
 
 {
-    name: "T",
+    sampa: "T",
+    ipa: "θ",
     place: "dental",
     manner: "fricative",
     class: "obstruent",
@@ -49,7 +55,8 @@ export const consonants = [
 },
 
 {
-    name: "D",
+    sampa: "D",
+    ipa: "ð",
     place: "dental",
     manner: "fricative",
     class: "obstruent",
@@ -57,7 +64,8 @@ export const consonants = [
 },
 
 {
-    name: "n",
+    sampa: "n",
+    ipa: "n",
     place: "alveolar",
     manner: "nasal",
     class: "sonorant",
@@ -65,7 +73,8 @@ export const consonants = [
 },
 
 {
-    name: "d",
+    sampa: "d",
+    ipa: "d",
     place: "alveolar",
     manner: "plosive",
     class: "obstruent",
@@ -73,7 +82,8 @@ export const consonants = [
 },
 
 {
-    name: "t",
+    sampa: "t",
+    ipa: "t",
     place: "alveolar",
     manner: "plosive",
     class: "obstruent",
@@ -81,7 +91,8 @@ export const consonants = [
 },
 
 {
-    name: "z",
+    sampa: "z",
+    ipa: "z",
     place: "alveolar",
     manner: "fricative",
     class: "obstruent",
@@ -89,7 +100,8 @@ export const consonants = [
 },
 
 {
-    name: "s",
+    sampa: "s",
+    ipa: "s",
     place: "alveolar",
     manner: "fricative",
     class: "obstruent",
@@ -97,7 +109,8 @@ export const consonants = [
 },
 
 {
-    name: "l",
+    sampa: "l",
+    ipa: "l",
     place: "alveolar",
     manner: "approximant",
     class: "sonorant",
@@ -105,7 +118,8 @@ export const consonants = [
 },
 
 {
-    name: "r",
+    sampa: "r",
+    ipa: "r",
     place: "postalveolar",
     manner: "approximant",
     class: "sonorant",
@@ -113,7 +127,8 @@ export const consonants = [
 },
 
 {
-    name: "dZ",
+    sampa: "dZ",
+    ipa: "dʒ",
     place: "palato-alveolar",
     manner: "affricate",
     class: "obstruent",
@@ -121,7 +136,8 @@ export const consonants = [
 },
 
 {
-    name: "tS",
+    sampa: "tS",
+    ipa: "tʃ",
     place: "palato-alveolar",
     manner: "affricate",
     class: "obstruent",
@@ -129,7 +145,8 @@ export const consonants = [
 },
 
 {
-    name: "Z",
+    sampa: "Z",
+    ipa: "ʒ",
     place: "palato-alveolar",
     manner: "fricative",
     class: "obstruent",
@@ -137,7 +154,8 @@ export const consonants = [
 },
 
 {
-    name: "S",
+    sampa: "S",
+    ipa: "ʃ",
     place: "palato-alveolar",
     manner: "fricative",
     class: "obstruent",
@@ -145,7 +163,8 @@ export const consonants = [
 },
 
 {
-    name: "j",
+    sampa: "j",
+    ipa: "j",
     place: "palatal",
     manner: "approximant",
     class: "sonorant",
@@ -153,7 +172,8 @@ export const consonants = [
 },
 
 {
-    name: "N",
+    sampa: "N",
+    ipa: "ŋ",
     place: "velar",
     manner: "nasal",
     class: "sonorant",
@@ -161,7 +181,8 @@ export const consonants = [
 },
 
 {
-    name: "g",
+    sampa: "g",
+    ipa: "g",
     place: "velar",
     manner: "plosive",
     class: "obstruent",
@@ -169,7 +190,8 @@ export const consonants = [
 },
 
 {
-    name: "k",
+    sampa: "k",
+    ipa: "k",
     place: "velar",
     manner: "plosive",
     class: "obstruent",
@@ -177,7 +199,8 @@ export const consonants = [
 },
 
 {
-    name: "w",
+    sampa: "w",
+    ipa: "w",
     place: "labio-velar",
     manner: "approximant",
     class: "sonorant",
@@ -185,7 +208,8 @@ export const consonants = [
 },
 
 {
-    name: "h",
+    sampa: "h",
+    ipa: "h",
     place: "glottal",
     manner: "fricative",
     class: "obstruent",
@@ -197,7 +221,8 @@ export const consonants = [
 export const vowels = [
 
 {
-    name: "I",
+    sampa: "I",
+    ipa: "ɪ",
     vertical: "close",
     horizontal: "front",
     long: false,
@@ -206,7 +231,8 @@ export const vowels = [
 },
 
 {
-    name: "e",
+    sampa: "e",
+    ipa: "e",
     vertical: "mid",
     horizontal: "front",
     long: false,
@@ -215,7 +241,8 @@ export const vowels = [
 },
 
 {
-    name: "{",
+    sampa: "{",
+    ipa: "æ",
     vertical: "open",
     horizontal: "front",
     long: false,
@@ -224,7 +251,8 @@ export const vowels = [
 },
 
 {
-    name: "V",
+    sampa: "V",
+    ipa: "ʌ",
     vertical: "open",
     horizontal: "central",
     long: false,
@@ -233,7 +261,8 @@ export const vowels = [
 },
 
 {
-    name: "@",
+    sampa: "@",
+    ipa: "ə",
     vertical: "mid",
     horizontal: "central",
     long: false,
@@ -243,7 +272,8 @@ export const vowels = [
 },
 
 {
-    name: "U",
+    sampa: "U",
+    ipa: "ʊ",
     vertical: "close",
     horizontal: "back",
     long: false,
@@ -253,7 +283,8 @@ export const vowels = [
 },
 
 {
-    name: "Q",
+    sampa: "Q",
+    ipa: "ɒ",
     vertical: "open",
     horizontal: "back",
     long: false,
@@ -263,7 +294,8 @@ export const vowels = [
 },
 
 {
-    name: "i:",
+    sampa: "i:",
+    ipa: "iː",
     vertical: "close",
     horizontal: "front",
     long: true,
@@ -273,7 +305,8 @@ export const vowels = [
 },
 
 {
-    name: "3:",
+    sampa: "3:",
+    ipa: "ɜː",
     vertical: "mid",
     horizontal: "central",
     long: true,
@@ -283,7 +316,8 @@ export const vowels = [
 },
 
 {
-    name: "u:",
+    sampa: "u:",
+    ipa: "uː",
     vertical: "close",
     horizontal: "back",
     long: true,
@@ -293,7 +327,8 @@ export const vowels = [
 },
 
 {
-    name: "O:",
+    sampa: "O:",
+    ipa: "ɔː",
     vertical: "mid",
     horizontal: "back",
     long: true,
@@ -303,7 +338,8 @@ export const vowels = [
 },
 
 {
-    name: "A:",
+    sampa: "A:",
+    ipa: "ɑː",
     vertical: "open",
     horizontal: "back",
     long: true,
@@ -313,49 +349,57 @@ export const vowels = [
 },
 
 {
-    name: "eI",
+    sampa: "eI",
+    ipa: "eɪ",
     type: "closing",
     long: true
 },
 
 {
-    name: "OI",
+    sampa: "OI",
+    ipa: "ɔɪ",
     type: "closing",
     long: true
 },
 
 {
-    name: "aI",
+    sampa: "aI",
+    ipa: "aɪ",
     type: "closing",
     long: true
 },
 
 {
-    name: "@U",
+    sampa: "@U",
+    ipa: "əʊ",
     type: "closing",
     long: true
 },
 
 {
-    name: "aU",
+    sampa: "aU",
+    ipa: "aʊ",
     type: "closing",
     long: true
 },
 
 {
-    name: "e@",
+    sampa: "e@",
+    ipa: "eə",
     type: "centring",
     long: true
 },
 
 {
-    name: "I@",
+    sampa: "I@",
+    ipa: "ɪə",
     type: "centring",
     long: true
 },
 
 {
-    name: "U@",
+    sampa: "U@",
+    ipa: "ʊə",
     type: "centring",
     long: true
 }

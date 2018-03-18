@@ -78,6 +78,20 @@ $(document).ready(() => {
     const get_phonemes_with_prop = (prop, value) => {
         return phonemes.filter(x => x[prop] === value);
     }
-    
+
+    const generate_random_phoneme = (category) => {
+        let random_number;
+        if (category === "C") {
+            random_number = Math.floor(Math.random() * consonants.length);
+            return consonants[random_number];
+        }
+        if (category === "V") {
+            random_number = Math.floor(Math.random() * vowels.length);
+            return vowels[random_number];
+        } else {
+            random_number = Math.floor(Math.random() * phonemes.length);
+            return phonemes[random_number];
+        }
+    }
 
 });

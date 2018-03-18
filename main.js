@@ -39,7 +39,7 @@ $(document).ready(() => {
                 target = moveDown(el);
         }
 
-        if ((target.length === 0) && (el.hasClass("pacman")) || (el.hasClass("phoneme") && target.hasClass("phoneme")) || (el.hasClass("active") && target.hasClass("pacman"))) {
+        if ((target.length === 0) && (el.hasClass("pacman")) || (el.hasClass("phoneme") && target.hasClass("phoneme")) || target.hasClass("pacman")) {
             return;
         }
 
@@ -101,7 +101,6 @@ $(document).ready(() => {
     const move_up_and_down = (el, pace) => {
         let direction = Math.random() < 0.5 ? 38 : 40;
         let index = el.attr("index");
-        console.log(el.attr("index"));
         let interval = setInterval(function() {
             if ((el.parent().prev().find('td').eq(el.index())).length === 0) {
                 direction = 40;
@@ -113,7 +112,25 @@ $(document).ready(() => {
             el = $table.find('td[index='+index+']');
         }, pace, el);
         intervals[index] = interval;
-    }
+    };
+
+    // 2. Left and right
+
+    const move_left_and_right = (el, pace) => {
+        let direction = Math.random() < 0.5 ? 37 : 39;
+        let index = el.attr("index");
+        let interval = setInterval(function() {
+            if (el.prev().length === 0) {
+                direction = 39;
+            }
+            if (el.next().length === 0) {
+                direction = 37;
+            }
+            movement (el, direction);
+            el = $table.find('td[index='+index+']');
+        }, pace, el);
+        intervals[index] = interval;
+    };
 
     // Phoneme functions
 
@@ -152,5 +169,8 @@ $(document).ready(() => {
         pickedTd.html(phoneme.ipa).addClass(phoneme.sampa).addClass("phoneme").attr("index", phonemeIndex);
         phonemeIndex++;
     }
+
+    put_a_phoneme_on_the_board(consonants[0]);
+    move_left_and_right($table.find('.phoneme'), 1000);
 
 });

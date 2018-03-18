@@ -132,6 +132,62 @@ $(document).ready(() => {
         intervals[index] = interval;
     };
 
+    // 3. Diagonal I
+
+    const move_diagonal_1 = (el, pace) => {
+        let direction = Math.random() < 0.5 ? "left_up" : "right_down";
+        let index = el.attr("index");
+        let interval = setInterval(function() {
+            if (el.prev().length === 0 || el.parent().prev().find('td').length === 0) {
+                direction = "right_down";
+            }
+            if (el.next().length === 0 || el.parent().next().find('td').length === 0) {
+                direction = "left_up";
+            }
+            if (direction === "left_up") {
+                movement (el, 37);
+                el = $table.find('td[index='+index+']');
+                movement (el, 38);
+                el = $table.find('td[index='+index+']');
+            }
+            if (direction === "right_down") {
+                movement (el, 39);
+                el = $table.find('td[index='+index+']');
+                movement (el, 40);
+                el = $table.find('td[index='+index+']');
+            }            
+        }, pace, el);
+        intervals[index] = interval;
+    };
+
+    // 4. Diagonal II
+
+    const move_diagonal_2 = (el, pace) => {
+        let direction = Math.random() < 0.5 ? "left_down" : "right_up";
+        let index = el.attr("index");
+        let interval = setInterval(function() {
+            if (el.prev().length === 0 || el.parent().next().find('td').length === 0) {
+                direction = "right_up";
+            }
+            if (el.next().length === 0 || el.parent().prev().find('td').length === 0) {
+                direction = "left_down";
+            }
+            if (direction === "left_down") {
+                movement (el, 37);
+                el = $table.find('td[index='+index+']');
+                movement (el, 40);
+                el = $table.find('td[index='+index+']');
+            }
+            if (direction === "right_up") {
+                movement (el, 39);
+                el = $table.find('td[index='+index+']');
+                movement (el, 38);
+                el = $table.find('td[index='+index+']');
+            }            
+        }, pace, el);
+        intervals[index] = interval;
+    };
+
     // Phoneme functions
 
     const get_phonemes_with_prop = (prop, value) => {
@@ -169,8 +225,5 @@ $(document).ready(() => {
         pickedTd.html(phoneme.ipa).addClass(phoneme.sampa).addClass("phoneme").attr("index", phonemeIndex);
         phonemeIndex++;
     }
-
-    put_a_phoneme_on_the_board(consonants[0]);
-    move_left_and_right($table.find('.phoneme'), 1000);
 
 });

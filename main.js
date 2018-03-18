@@ -1,4 +1,4 @@
-import { consonants, vowels } from './RP_segments_api.js';
+import { consonants, vowels, phonemes } from './RP_segments_api.js';
 
 $(document).ready(() => {
 
@@ -23,7 +23,7 @@ $(document).ready(() => {
     const moveUp = (el => el.parent().prev().find('td').eq(el.index()));
     const moveDown = (el => el.parent().next().find('td').eq(el.index()));
 
-    function movement(el, direction, elClass1, elClass2) {
+    const movement = (el, direction, elClass1, elClass2) => {
         let target = null;
         switch(direction) {
             case 37:
@@ -74,5 +74,10 @@ $(document).ready(() => {
             movement($pacman, e.keyCode, 'pacman', elClass2);
         }
     });
+
+    const get_phonemes_with_prop = (prop, value) => {
+        return phonemes.filter(x => x[prop] === value);
+    }
+    
 
 });

@@ -1,7 +1,7 @@
 export const consonants = [
 
 {
-    name: "m_cons",
+    name: "m",
     place: "bilabial",
     manner: "nasal",
     class: "sonorant",
@@ -9,7 +9,7 @@ export const consonants = [
 },
 
 {
-    name: "b_cons",
+    name: "b",
     place: "bilabial",
     manner: "plosive",
     class: "obstruent",
@@ -17,7 +17,7 @@ export const consonants = [
 },
 
 {
-    name: "p_cons",
+    name: "p",
     place: "bilabial",
     manner: "plosive",
     class: "obstruent",
@@ -25,7 +25,7 @@ export const consonants = [
 },
 
 {
-    name: "v_cons",
+    name: "v",
     place: "labiodental",
     manner: "fricative",
     class: "obstruent",
@@ -33,7 +33,7 @@ export const consonants = [
 },
 
 {
-    name: "f_cons",
+    name: "f",
     place: "labiodental",
     manner: "fricative",
     class: "obstruent",
@@ -41,7 +41,7 @@ export const consonants = [
 },
 
 {
-    name: "T_cons",
+    name: "T",
     place: "dental",
     manner: "fricative",
     class: "obstruent",
@@ -49,7 +49,7 @@ export const consonants = [
 },
 
 {
-    name: "D_cons",
+    name: "D",
     place: "dental",
     manner: "fricative",
     class: "obstruent",
@@ -57,7 +57,7 @@ export const consonants = [
 },
 
 {
-    name: "n_cons",
+    name: "n",
     place: "alveolar",
     manner: "nasal",
     class: "sonorant",
@@ -65,7 +65,7 @@ export const consonants = [
 },
 
 {
-    name: "d_cons",
+    name: "d",
     place: "alveolar",
     manner: "plosive",
     class: "obstruent",
@@ -73,7 +73,7 @@ export const consonants = [
 },
 
 {
-    name: "t_cons",
+    name: "t",
     place: "alveolar",
     manner: "plosive",
     class: "obstruent",
@@ -81,7 +81,7 @@ export const consonants = [
 },
 
 {
-    name: "z_cons",
+    name: "z",
     place: "alveolar",
     manner: "fricative",
     class: "obstruent",
@@ -89,7 +89,7 @@ export const consonants = [
 },
 
 {
-    name: "s_cons",
+    name: "s",
     place: "alveolar",
     manner: "fricative",
     class: "obstruent",
@@ -97,7 +97,7 @@ export const consonants = [
 },
 
 {
-    name: "l_cons",
+    name: "l",
     place: "alveolar",
     manner: "approximant",
     class: "sonorant",
@@ -105,7 +105,7 @@ export const consonants = [
 },
 
 {
-    name: "r_cons",
+    name: "r",
     place: "postalveolar",
     manner: "approximant",
     class: "sonorant",
@@ -113,7 +113,7 @@ export const consonants = [
 },
 
 {
-    name: "dZ_cons",
+    name: "dZ",
     place: "palato-alveolar",
     manner: "affricate",
     class: "obstruent",
@@ -121,7 +121,7 @@ export const consonants = [
 },
 
 {
-    name: "tS_cons",
+    name: "tS",
     place: "palato-alveolar",
     manner: "affricate",
     class: "obstruent",
@@ -129,7 +129,7 @@ export const consonants = [
 },
 
 {
-    name: "Z_cons",
+    name: "Z",
     place: "palato-alveolar",
     manner: "fricative",
     class: "obstruent",
@@ -137,7 +137,7 @@ export const consonants = [
 },
 
 {
-    name: "S_cons",
+    name: "S",
     place: "palato-alveolar",
     manner: "fricative",
     class: "obstruent",
@@ -145,7 +145,7 @@ export const consonants = [
 },
 
 {
-    name: "j_cons",
+    name: "j",
     place: "palatal",
     manner: "approximant",
     class: "sonorant",
@@ -153,7 +153,7 @@ export const consonants = [
 },
 
 {
-    name: "N_cons",
+    name: "N",
     place: "velar",
     manner: "nasal",
     class: "sonorant",
@@ -161,7 +161,7 @@ export const consonants = [
 },
 
 {
-    name: "g_cons",
+    name: "g",
     place: "velar",
     manner: "plosive",
     class: "obstruent",
@@ -169,7 +169,7 @@ export const consonants = [
 },
 
 {
-    name: "k_cons",
+    name: "k",
     place: "velar",
     manner: "plosive",
     class: "obstruent",
@@ -177,7 +177,7 @@ export const consonants = [
 },
 
 {
-    name: "w_cons",
+    name: "w",
     place: "labio-velar",
     manner: "approximant",
     class: "sonorant",
@@ -185,7 +185,7 @@ export const consonants = [
 },
 
 {
-    name: "h_cons",
+    name: "h",
     place: "glottal",
     manner: "fricative",
     class: "obstruent",
@@ -197,7 +197,7 @@ export const consonants = [
 export const vowels = [
 
 {
-    name: "I_vowel",
+    name: "I",
     vertical: "close",
     horizontal: "front",
     long: false,
@@ -206,7 +206,7 @@ export const vowels = [
 },
 
 {
-    name: "e_vowel",
+    name: "e",
     vertical: "mid",
     horizontal: "front",
     long: false,
@@ -215,7 +215,7 @@ export const vowels = [
 },
 
 {
-    name: "{_vowel",
+    name: "{",
     vertical: "open",
     horizontal: "front",
     long: false,
@@ -224,7 +224,7 @@ export const vowels = [
 },
 
 {
-    name: "V_vowel",
+    name: "V",
     vertical: "open",
     horizontal: "central",
     long: false,
@@ -233,7 +233,7 @@ export const vowels = [
 },
 
 {
-    name: "@_vowel",
+    name: "@",
     vertical: "mid",
     horizontal: "central",
     long: false,
@@ -243,7 +243,7 @@ export const vowels = [
 },
 
 {
-    name: "U_vowel",
+    name: "U",
     vertical: "close",
     horizontal: "back",
     long: false,
@@ -253,7 +253,7 @@ export const vowels = [
 },
 
 {
-    name: "Q_vowel",
+    name: "Q",
     vertical: "open",
     horizontal: "back",
     long: false,
@@ -263,7 +263,7 @@ export const vowels = [
 },
 
 {
-    name: "i:_vowel",
+    name: "i:",
     vertical: "close",
     horizontal: "front",
     long: true,
@@ -273,7 +273,7 @@ export const vowels = [
 },
 
 {
-    name: "3:_vowel",
+    name: "3:",
     vertical: "mid",
     horizontal: "central",
     long: true,
@@ -283,7 +283,7 @@ export const vowels = [
 },
 
 {
-    name: "u:_vowel",
+    name: "u:",
     vertical: "close",
     horizontal: "back",
     long: true,
@@ -293,7 +293,7 @@ export const vowels = [
 },
 
 {
-    name: "O:_vowel",
+    name: "O:",
     vertical: "mid",
     horizontal: "back",
     long: true,
@@ -303,7 +303,7 @@ export const vowels = [
 },
 
 {
-    name: "A:_vowel",
+    name: "A:",
     vertical: "open",
     horizontal: "back",
     long: true,
@@ -313,43 +313,43 @@ export const vowels = [
 },
 
 {
-    name: "eI_vowel",
+    name: "eI",
     type: "closing",
     long: true
 },
 
 {
-    name: "OI_vowel",
+    name: "OI",
     type: "closing",
     long: true
 },
 
 {
-    name: "aI_vowel",
+    name: "aI",
     type: "closing",
     long: true
 },
 
 {
-    name: "@U_vowel",
+    name: "@U",
     type: "closing",
     long: true
 },
 
 {
-    name: "aU_vowel",
+    name: "aU",
     type: "closing",
     long: true
 },
 
 {
-    name: "e@_vowel",
+    name: "e@",
     type: "centring",
     long: true
 },
 
 {
-    name: "I@_vowel",
+    name: "I@",
     type: "centring",
     long: true
 },

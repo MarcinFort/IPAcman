@@ -23,7 +23,7 @@ $(document).ready(() => {
     const moveUp = (el => el.parent().prev().find('td').eq(el.index()));
     const moveDown = (el => el.parent().next().find('td').eq(el.index()));
 
-    const movement = (el, direction, elClass1, elClass2) => {
+    const movement = (el, direction, classes) => {
         let target = null;
         switch(direction) {
             case 37:
@@ -39,14 +39,27 @@ $(document).ready(() => {
                 target = moveDown(el);
         }
 
-        if (target.length > 0) {
-            target.addClass(elClass1);
-            el.removeClass(elClass1);
-            if (elClass2) {
-                target.addClass(elClass2);
-                el.removeClass(elClass2);
-            }
+        if ((target.length === 0) && (el.hasClass("pacman")) || (el.hasClass("phoneme") && target.hasClass("phoneme")) || (el.hasClass("active") && target.hasClass("pacman"))) {
+            return;
         }
+
+        if (!el.hasClass('pacman')) {
+            let content = el.html();
+            el.html("");
+            target.html(content);
+        }
+
+        classes.forEach(cssClass => {
+            target.addClass(cssClass);
+            el.removeClass(cssClass);
+        });
+
+        if (el.attr("index")) {
+            let index = el.attr("index");
+            el.attr("index", null);
+            target.attr("index", index);
+        }
+        
     }
 
     $('table > tr:first > td:first').addClass('pacman right');
@@ -71,9 +84,15 @@ $(document).ready(() => {
                     elClass2 = 'down';
             }
             $pacman.addClass(elClass2);
-            movement($pacman, e.keyCode, 'pacman', elClass2);
+            movement($pacman, e.keyCode, ['pacman', elClass2]);
         }
     });
+
+    // Phoneme movements
+
+    let phonemeIndex = 0;
+
+    // Phoneme functions
 
     const get_phonemes_with_prop = (prop, value) => {
         return phonemes.filter(x => x[prop] === value);
@@ -107,7 +126,8 @@ $(document).ready(() => {
             pickedTd = $table.find("tr:nth-child("+pos[0]+")").find("td:nth-child("+pos[1]+")");
         }
 
-        pickedTd.html(phoneme.ipa).addClass(phoneme.sampa).addClass("phoneme");
+        pickedTd.html(phoneme.ipa).addClass(phoneme.sampa).addClass("phoneme").attr("index", phonemeIndex);
+        phonemeIndex++;
     }
 
 });

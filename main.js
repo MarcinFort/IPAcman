@@ -9,7 +9,7 @@ $(document).ready(() => {
     for (let i = 0; i < 20; i++) {
         let $tr = $('<tr>');
         for (let j = 0; j < 30; j++) {
-            let $td = $('<td>').addClass('cell');
+            let $td = $('<td>');
             $tr.append($td);
         }
         $table.append($tr);
@@ -23,7 +23,7 @@ $(document).ready(() => {
     const moveUp = (el => el.parent().prev().find('td').eq(el.index()));
     const moveDown = (el => el.parent().next().find('td').eq(el.index()));
 
-    const movement = (el, direction, classes) => {
+    const movement = (el, direction) => {
         let target = null;
         switch(direction) {
             case 37:
@@ -48,6 +48,8 @@ $(document).ready(() => {
             el.html("");
             target.html(content);
         }
+
+        let classes = el.attr("class").split(" ");
 
         classes.forEach(cssClass => {
             target.addClass(cssClass);
@@ -84,13 +86,34 @@ $(document).ready(() => {
                     elClass2 = 'down';
             }
             $pacman.addClass(elClass2);
-            movement($pacman, e.keyCode, ['pacman', elClass2]);
+            movement($pacman, e.keyCode);
         }
     });
 
     // Phoneme movements
 
     let phonemeIndex = 0;
+
+    let intervals = [];
+
+    // 1. Up and down
+
+    const move_up_and_down = (el, pace) => {
+        let direction = Math.random() < 0.5 ? 38 : 40;
+        let index = el.attr("index");
+        console.log(el.attr("index"));
+        let interval = setInterval(function() {
+            if ((el.parent().prev().find('td').eq(el.index())).length === 0) {
+                direction = 40;
+            }
+            if ((el.parent().next().find('td').eq(el.index())).length === 0) {
+                direction = 38;
+            }
+            movement (el, direction);
+            el = $table.find('td[index='+index+']');
+        }, pace, el);
+        intervals[index] = interval;
+    }
 
     // Phoneme functions
 

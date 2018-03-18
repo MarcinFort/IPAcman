@@ -304,8 +304,8 @@ export const vowels = [
 
 {
     name: "A:_vowel",
-    vertical: "mid",
-    horizontal: "central",
+    vertical: "open",
+    horizontal: "back",
     long: true,
     tense: true,
     rounded: false
@@ -360,3 +360,5 @@ export const vowels = [
     long: true
 }
 ];
+
+export const phonemes = consonants.concat(vowels);

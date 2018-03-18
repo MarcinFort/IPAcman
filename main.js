@@ -102,14 +102,12 @@ $(document).ready(() => {
         let pos = generate_random_position();
         let pickedTd = $table.find("tr:nth-child("+pos[0]+")").find("td:nth-child("+pos[1]+")");
 
-        while (pickedTd.hasClass('.pacman')) {
+        while (pickedTd.hasClass('.pacman') || pickedTd.hasClass('.phoneme')) {
             pos = generate_random_position();
             pickedTd = $table.find("tr:nth-child("+pos[0]+")").find("td:nth-child("+pos[1]+")");
         }
 
         pickedTd.html(phoneme.ipa).addClass(phoneme.sampa).addClass("phoneme");
     }
-
-    
 
 });

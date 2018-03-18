@@ -24,3 +24,8 @@
     background-image: url(assets/pacman-down.png);
 }
 
+.phoneme {
+    background-color: antiquewhite;
+    text-align: center; 
+}
+

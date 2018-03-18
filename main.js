@@ -94,4 +94,22 @@ $(document).ready(() => {
         }
     }
 
+    const generate_random_position = () => {
+        return [Math.floor(Math.random() * 20) + 1, Math.floor(Math.random() * 30) + 1];
+    }
+
+    const put_a_phoneme_on_the_board = (phoneme) => {
+        let pos = generate_random_position();
+        let pickedTd = $table.find("tr:nth-child("+pos[0]+")").find("td:nth-child("+pos[1]+")");
+
+        while (pickedTd.hasClass('.pacman')) {
+            pos = generate_random_position();
+            pickedTd = $table.find("tr:nth-child("+pos[0]+")").find("td:nth-child("+pos[1]+")");
+        }
+
+        pickedTd.html(phoneme.ipa).addClass(phoneme.sampa).addClass("phoneme");
+    }
+
+    
+
 });

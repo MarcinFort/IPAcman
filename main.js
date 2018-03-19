@@ -222,7 +222,10 @@ $(document).ready(() => {
             pickedTd = $table.find("tr:nth-child("+pos[0]+")").find("td:nth-child("+pos[1]+")");
         }
 
-        pickedTd.html(phoneme.ipa).addClass(phoneme.sampa).addClass("phoneme").attr("index", phonemeIndex);
+        for (let prop in phoneme) {
+            pickedTd.addClass(phoneme[prop]);
+        }
+        pickedTd.html(phoneme.ipa).addClass("phoneme").attr("index", phonemeIndex);
         phonemeIndex++;
     }
 

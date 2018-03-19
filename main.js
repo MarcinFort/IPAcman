@@ -21,6 +21,8 @@ $(document).ready(() => {
     let current;
     let score = 0;
     let lives = 3;
+    let phonemeIndex = 0;
+    let intervals = [];
 
     // Movement functions
 
@@ -56,7 +58,24 @@ $(document).ready(() => {
 
         // Handle Pacman vs. Phoneme contact
 
+        const check_if_phoneme_current = () => {
+            let class_list = target[0].className.split(" ");
+            return current.some(x => class_list.includes(x));
+        }
 
+        if (el.hasClass('pacman') && target.hasClass('phoneme')) {
+            
+            if (check_if_phoneme_current()) {
+                target.removeClass();
+                target.html("");
+                let index = target.attr("index");
+                clearInterval(intervals[index]);
+                score++;
+            } else {
+                lives--;
+                return;
+            }
+        }
 
         // Default
 
@@ -108,12 +127,6 @@ $(document).ready(() => {
             movement($pacman, e.keyCode);
         }
     });
-
-    // Phoneme movements
-
-    let phonemeIndex = 0;
-
-    let intervals = [];
 
     // 1. Up and down
 
@@ -253,6 +266,5 @@ $(document).ready(() => {
         $('#current_search').html(questions[index]["question"]);
         current = questions[index]["classes"];
     }
-
 
 });

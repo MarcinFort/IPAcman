@@ -406,3 +406,52 @@ export const vowels = [
 ];
 
 export const phonemes = consonants.concat(vowels);
+
+export const questions = [
+
+    {
+        question: "an obstruent",
+        classes: "obstruent"
+    },
+
+    {
+        question: "a sonorant",
+        classes: "sonorant"
+    },
+
+    {
+        question: "a voiced consonant",
+        classes: "voiced"
+    },
+
+    {
+        question: "a voiceless consonant",
+        classes: "voiceless"
+    },
+
+    {
+        question: "a fricative",
+        classes: "fricative"
+    },
+
+    {
+        question: "a plosive",
+        classes: "plosive"
+    },
+
+    {
+        question: "a nasal",
+        classes: "nasal"
+    },
+
+    {
+        question: "an approximant",
+        classes: "approximant"
+    },
+
+    {
+        question: "an affricate",
+        classes: "affricate"
+    }
+
+]

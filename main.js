@@ -1,4 +1,4 @@
-import { consonants, vowels, phonemes } from './RP_segments_api.js';
+import { consonants, vowels, phonemes, questions } from './RP_segments_api.js';
 
 $(document).ready(() => {
 

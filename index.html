@@ -6,7 +6,28 @@
 </head>
 
 <body>
-    <div id="container"></div>
+    <div id="big_container">
+        <div id="container"></div>
+        <div id="info">
+            <div id="logo" class="info_div">IPAcman</div>
+            <div id="instructions" class="info_div">Now I would like to eat....
+                <div id="current_search"></div>
+                <span>Remember that all other phonemes poison me :(</span>
+            </div>
+            <div id="score" class="info_div">
+                Score: <span id="score_span">0</span>
+                <br/>
+                Lives: <span id="lives_span">3</span>
+            </div>
+            <div id="leaderboard" class="info_div">
+                <ol>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="main.js" type="module"></script>

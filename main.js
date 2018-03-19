@@ -30,6 +30,9 @@ $(document).ready(() => {
     const moveDown = (el => el.parent().next().find('td').eq(el.index()));
 
     const movement = (el, direction) => {
+
+        // General movement mechanics
+
         let target = null;
         switch(direction) {
             case 37:
@@ -45,9 +48,17 @@ $(document).ready(() => {
                 target = moveDown(el);
         }
 
+        // Block movement in some cases
+
         if ((target.length === 0) && (el.hasClass("pacman")) || (el.hasClass("phoneme") && target.hasClass("phoneme")) || target.hasClass("pacman")) {
             return;
         }
+
+        // Handle Pacman vs. Phoneme contact
+
+
+
+        // Default
 
         if (!el.hasClass('pacman')) {
             let content = el.html();
@@ -69,6 +80,8 @@ $(document).ready(() => {
         }
         
     }
+
+    // Render Pacman and bind keycodes
 
     $('table > tr:first > td:first').addClass('pacman right');
 
@@ -240,5 +253,6 @@ $(document).ready(() => {
         $('#current_search').html(questions[index]["question"]);
         current = questions[index]["classes"];
     }
+
 
 });

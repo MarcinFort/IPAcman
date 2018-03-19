@@ -411,47 +411,47 @@ export const questions = [
 
     {
         question: "an obstruent",
-        classes: "obstruent"
+        classes: ["obstruent"]
     },
 
     {
         question: "a sonorant",
-        classes: "sonorant"
+        classes: ["sonorant"]
     },
 
     {
         question: "a voiced consonant",
-        classes: "voiced"
+        classes: ["voiced"]
     },
 
     {
         question: "a voiceless consonant",
-        classes: "voiceless"
+        classes: ["voiceless"]
     },
 
     {
         question: "a fricative",
-        classes: "fricative"
+        classes: ["fricative"]
     },
 
     {
         question: "a plosive",
-        classes: "plosive"
+        classes: ["plosive"]
     },
 
     {
         question: "a nasal",
-        classes: "nasal"
+        classes: ["nasal"]
     },
 
     {
         question: "an approximant",
-        classes: "approximant"
+        classes: ["approximant"]
     },
 
     {
         question: "an affricate",
-        classes: "affricate"
+        classes: ["affricate"]
     }
 
 ]

@@ -16,6 +16,12 @@ $(document).ready(() => {
     }
     $board.append($table);
 
+    // Global variables
+
+    let current;
+    let score = 0;
+    let lives = 3;
+
     // Movement functions
 
     const moveLeft = (el => el.prev());
@@ -227,6 +233,12 @@ $(document).ready(() => {
         }
         pickedTd.html(phoneme.ipa).addClass("phoneme").attr("index", phonemeIndex);
         phonemeIndex++;
+    }
+
+    const generate_random_question = () => {
+        let index = Math.floor(Math.random()*questions.length);
+        $('#current_search').html(questions[index]["question"]);
+        current = questions[index]["classes"];
     }
 
 });

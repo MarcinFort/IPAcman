@@ -5,8 +5,8 @@ export const consonants = [
     ipa: "m",
     place: "bilabial",
     manner: "nasal",
-    class: "sonorant",
-    voice: true
+    category: "sonorant",
+    voice: "voiced"
 },
 
 {
@@ -14,8 +14,8 @@ export const consonants = [
     ipa: "b",
     place: "bilabial",
     manner: "plosive",
-    class: "obstruent",
-    voice: true
+    category: "obstruent",
+    voice: "voiced"
 },
 
 {
@@ -23,8 +23,8 @@ export const consonants = [
     ipa: "p",
     place: "bilabial",
     manner: "plosive",
-    class: "obstruent",
-    voice: false
+    category: "obstruent",
+    voice: "voiceless"
 },
 
 {
@@ -32,8 +32,8 @@ export const consonants = [
     ipa: "v",
     place: "labiodental",
     manner: "fricative",
-    class: "obstruent",
-    voice: true
+    category: "obstruent",
+    voice: "voiced"
 },
 
 {
@@ -41,8 +41,8 @@ export const consonants = [
     ipa: "f",
     place: "labiodental",
     manner: "fricative",
-    class: "obstruent",
-    voice: false
+    category: "obstruent",
+    voice: "voiceless"
 },
 
 {
@@ -50,8 +50,8 @@ export const consonants = [
     ipa: "θ",
     place: "dental",
     manner: "fricative",
-    class: "obstruent",
-    voice: false
+    category: "obstruent",
+    voice: "voiceless"
 },
 
 {
@@ -59,8 +59,8 @@ export const consonants = [
     ipa: "ð",
     place: "dental",
     manner: "fricative",
-    class: "obstruent",
-    voice: false
+    category: "obstruent",
+    voice: "voiceless"
 },
 
 {
@@ -68,8 +68,8 @@ export const consonants = [
     ipa: "n",
     place: "alveolar",
     manner: "nasal",
-    class: "sonorant",
-    voice: true
+    category: "sonorant",
+    voice: "voiced"
 },
 
 {
@@ -77,8 +77,8 @@ export const consonants = [
     ipa: "d",
     place: "alveolar",
     manner: "plosive",
-    class: "obstruent",
-    voice: true
+    category: "obstruent",
+    voice: "voiced"
 },
 
 {
@@ -86,8 +86,8 @@ export const consonants = [
     ipa: "t",
     place: "alveolar",
     manner: "plosive",
-    class: "obstruent",
-    voice: false
+    category: "obstruent",
+    voice: "voiceless"
 },
 
 {
@@ -95,8 +95,8 @@ export const consonants = [
     ipa: "z",
     place: "alveolar",
     manner: "fricative",
-    class: "obstruent",
-    voice: true
+    category: "obstruent",
+    voice: "voiced"
 },
 
 {
@@ -104,8 +104,8 @@ export const consonants = [
     ipa: "s",
     place: "alveolar",
     manner: "fricative",
-    class: "obstruent",
-    voice: false
+    category: "obstruent",
+    voice: "voiceless"
 },
 
 {
@@ -113,8 +113,8 @@ export const consonants = [
     ipa: "l",
     place: "alveolar",
     manner: "approximant",
-    class: "sonorant",
-    voice: true
+    category: "sonorant",
+    voice: "voiced"
 },
 
 {
@@ -122,8 +122,8 @@ export const consonants = [
     ipa: "r",
     place: "postalveolar",
     manner: "approximant",
-    class: "sonorant",
-    voice: true
+    category: "sonorant",
+    voice: "voiced"
 },
 
 {
@@ -131,8 +131,8 @@ export const consonants = [
     ipa: "dʒ",
     place: "palato-alveolar",
     manner: "affricate",
-    class: "obstruent",
-    voice: true
+    category: "obstruent",
+    voice: "voiced"
 },
 
 {
@@ -140,8 +140,8 @@ export const consonants = [
     ipa: "tʃ",
     place: "palato-alveolar",
     manner: "affricate",
-    class: "obstruent",
-    voice: false
+    category: "obstruent",
+    voice: "voiceless"
 },
 
 {
@@ -149,8 +149,8 @@ export const consonants = [
     ipa: "ʒ",
     place: "palato-alveolar",
     manner: "fricative",
-    class: "obstruent",
-    voice: true
+    category: "obstruent",
+    voice: "voiced"
 },
 
 {
@@ -158,8 +158,8 @@ export const consonants = [
     ipa: "ʃ",
     place: "palato-alveolar",
     manner: "fricative",
-    class: "obstruent",
-    voice: false
+    category: "obstruent",
+    voice: "voiceless"
 },
 
 {
@@ -167,8 +167,8 @@ export const consonants = [
     ipa: "j",
     place: "palatal",
     manner: "approximant",
-    class: "sonorant",
-    voice: true
+    category: "sonorant",
+    voice: "voiced"
 },
 
 {
@@ -176,8 +176,8 @@ export const consonants = [
     ipa: "ŋ",
     place: "velar",
     manner: "nasal",
-    class: "sonorant",
-    voice: true
+    category: "sonorant",
+    voice: "voiced"
 },
 
 {
@@ -185,8 +185,8 @@ export const consonants = [
     ipa: "g",
     place: "velar",
     manner: "plosive",
-    class: "obstruent",
-    voice: true
+    category: "obstruent",
+    voice: "voiced"
 },
 
 {
@@ -194,8 +194,8 @@ export const consonants = [
     ipa: "k",
     place: "velar",
     manner: "plosive",
-    class: "obstruent",
-    voice: false
+    category: "obstruent",
+    voice: "voiceless"
 },
 
 {
@@ -203,8 +203,8 @@ export const consonants = [
     ipa: "w",
     place: "labio-velar",
     manner: "approximant",
-    class: "sonorant",
-    voice: true
+    category: "sonorant",
+    voice: "voiced"
 },
 
 {
@@ -212,8 +212,8 @@ export const consonants = [
     ipa: "h",
     place: "glottal",
     manner: "fricative",
-    class: "obstruent",
-    voice: false
+    category: "obstruent",
+    voice: "voiceless"
 }
 ];
 
@@ -225,9 +225,9 @@ export const vowels = [
     ipa: "ɪ",
     vertical: "close",
     horizontal: "front",
-    long: false,
-    tense: false,
-    rounded: false
+    length: "short",
+    tenseness: "lax",
+    roundedness: "unrounded"
 },
 
 {
@@ -235,9 +235,9 @@ export const vowels = [
     ipa: "e",
     vertical: "mid",
     horizontal: "front",
-    long: false,
-    tense: false,
-    rounded: false
+    length: "short",
+    tenseness: "lax",
+    roundedness: "unrounded"
 },
 
 {
@@ -245,9 +245,9 @@ export const vowels = [
     ipa: "æ",
     vertical: "open",
     horizontal: "front",
-    long: false,
-    tense: false,
-    rounded: false
+    length: "short",
+    tenseness: "lax",
+    roundedness: "unrounded"
 },
 
 {
@@ -255,9 +255,9 @@ export const vowels = [
     ipa: "ʌ",
     vertical: "open",
     horizontal: "central",
-    long: false,
-    tense: false,
-    rounded: false
+    length: "short",
+    tenseness: "lax",
+    roundedness: "unrounded"
 },
 
 {
@@ -265,9 +265,9 @@ export const vowels = [
     ipa: "ə",
     vertical: "mid",
     horizontal: "central",
-    long: false,
-    tense: false,
-    rounded: false
+    length: "short",
+    tenseness: "lax",
+    roundedness: "unrounded"
 
 },
 
@@ -276,9 +276,9 @@ export const vowels = [
     ipa: "ʊ",
     vertical: "close",
     horizontal: "back",
-    long: false,
-    tense: false,
-    rounded: true
+    length: "short",
+    tenseness: "lax",
+    roundedness: "rounded"
 
 },
 
@@ -287,9 +287,9 @@ export const vowels = [
     ipa: "ɒ",
     vertical: "open",
     horizontal: "back",
-    long: false,
-    tense: false,
-    rounded: true
+    length: "short",
+    tenseness: "lax",
+    roundedness: "rounded"
 
 },
 
@@ -298,9 +298,9 @@ export const vowels = [
     ipa: "iː",
     vertical: "close",
     horizontal: "front",
-    long: true,
-    tense: true,
-    rounded: false
+    length: "long",
+    tenseness: "tense",
+    roundedness: "unrounded"
 
 },
 
@@ -309,9 +309,9 @@ export const vowels = [
     ipa: "ɜː",
     vertical: "mid",
     horizontal: "central",
-    long: true,
-    tense: true,
-    rounded: false
+    length: "long",
+    tenseness: "tense",
+    roundedness: "unrounded"
 
 },
 
@@ -320,9 +320,9 @@ export const vowels = [
     ipa: "uː",
     vertical: "close",
     horizontal: "back",
-    long: true,
-    tense: true,
-    rounded: true
+    length: "long",
+    tenseness: "tense",
+    roundedness: "rounded"
 
 },
 
@@ -331,9 +331,9 @@ export const vowels = [
     ipa: "ɔː",
     vertical: "mid",
     horizontal: "back",
-    long: true,
-    tense: true,
-    rounded: true
+    length: "long",
+    tenseness: "tense",
+    roundedness: "rounded"
 
 },
 
@@ -342,9 +342,9 @@ export const vowels = [
     ipa: "ɑː",
     vertical: "open",
     horizontal: "back",
-    long: true,
-    tense: true,
-    rounded: false
+    length: "long",
+    tenseness: "tense",
+    roundedness: "unrounded"
 
 },
 
@@ -352,56 +352,56 @@ export const vowels = [
     sampa: "eI",
     ipa: "eɪ",
     type: "closing",
-    long: true
+    length: "long"
 },
 
 {
     sampa: "OI",
     ipa: "ɔɪ",
     type: "closing",
-    long: true
+    length: "long"
 },
 
 {
     sampa: "aI",
     ipa: "aɪ",
     type: "closing",
-    long: true
+    length: "long"
 },
 
 {
     sampa: "@U",
     ipa: "əʊ",
     type: "closing",
-    long: true
+    length: "long"
 },
 
 {
     sampa: "aU",
     ipa: "aʊ",
     type: "closing",
-    long: true
+    length: "long"
 },
 
 {
     sampa: "e@",
     ipa: "eə",
     type: "centring",
-    long: true
+    length: "long"
 },
 
 {
     sampa: "I@",
     ipa: "ɪə",
     type: "centring",
-    long: true
+    length: "long"
 },
 
 {
     sampa: "U@",
     ipa: "ʊə",
     type: "centring",
-    long: true
+    length: "long"
 }
 ];
 

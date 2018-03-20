@@ -303,6 +303,75 @@ export const questions = [
     {
         question: "a semi-vowel",
         classes: ["j", "w"]
-    }
+    },
 
+    {
+        question: "a front vowel",
+        classes: ["front"]
+    },
+
+    {
+        question: "a central vowel",
+        classes: ["central"]
+    },
+
+    {
+        question: "a back vowel",
+        classes: ["back"]
+    },
+
+    {
+        question: "a close vowel",
+        classes: ["close"]
+    },
+
+    {
+        question: "a mid vowel",
+        classes: ["mid"]
+    },
+
+    {
+        question: "an open vowel",
+        classes: ["open"]
+    },
+
+    {
+        question: "a rounded vowel",
+        classes: ["rounded"]
+    },
+
+    {
+        question: "an unrounded vowel",
+        classes: ["unrounded"]
+    },    
+
+    {
+        question: "a short vowel",
+        classes: ["short"]
+    },
+
+    {
+        question: "a long vowel",
+        classes: ["long"]
+    },
+
+    {
+        question: "a lax vowel",
+        classes: ["lax"]
+    },
+
+    {
+        question: "a tense vowel",
+        classes: ["tense"]
+    },
+
+    {
+        question: "a closing diphthong",
+        classes: ["closing"]
+    },
+
+    {
+        question: "a centring diphthong",
+        classes: ["centring"]
+    }
 ]

@@ -201,7 +201,7 @@ export const consonants = [
 {
     sampa: "w",
     ipa: "w",
-    place: "labio-velar",
+    place: "labiovelar",
     manner: "approximant",
     category: "sonorant",
     voice: "voiced"
@@ -452,6 +452,61 @@ export const questions = [
     {
         question: "an affricate",
         classes: ["affricate"]
+    },
+
+    {
+        question: "a bilabial consonant",
+        classes: ["bilabial"]
+    },
+
+    {
+        question: "a labiodental consonant",
+        classes: ["labiodental"]
+    },
+
+    {
+        question: "a dental consonant",
+        classes: ["dental"]
+    },
+
+    {
+        question: "an alveolar consonant",
+        classes: ["alveolar"]
+    },
+
+    {
+        question: "a palato-alveolar consonant",
+        classes: ["palato-alveolar"]
+    },
+
+    {
+        question: "a postalveolar consonant",
+        classes: ["postalveolar"]
+    },
+
+    {
+        question: "a palatal consonant",
+        classes: ["palatal"]
+    },
+
+    {
+        question: "a velar consonant",
+        classes: ["velar"]
+    },
+
+    {
+        question: "a glottal consonant",
+        classes: ["glottal"]
+    },
+
+    {
+        question: "a labiodental consonant",
+        classes: ["labiodental"]
+    },
+
+    {
+        question: "a labiovelar consonant",
+        classes: ["labiovelar"]
     }
 
 ]

@@ -24,6 +24,7 @@ $(document).ready(() => {
     let lives = 3;
     let phonemeIndex = 0;
     let intervals = [];
+    let pace = 1000;
 
     // Movement functions
 
@@ -53,7 +54,7 @@ $(document).ready(() => {
 
         // Block movement in some cases
 
-        if ((target.length === 0) && (el.hasClass("pacman")) || (el.hasClass("phoneme") && target.hasClass("phoneme")) || target.hasClass("pacman")) {
+        if ((target.length === 0) && (el.hasClass("pacman")) || target.hasClass("pacman")) {
             return;
         }
 
@@ -66,16 +67,29 @@ $(document).ready(() => {
 
         if (el.hasClass('pacman') && target.hasClass('phoneme')) {
             
+            target.removeClass();
+            target.html("");
+            let index = target.attr("index");
+            clearInterval(intervals[index]);
             if (check_if_phoneme_current()) {
-                target.removeClass();
-                target.html("");
-                let index = target.attr("index");
-                clearInterval(intervals[index]);
                 score++;
             } else {
                 lives--;
-                return;
             }
+        }
+
+        // Handle phoneme vs. phoneme contact
+        
+        if (el.hasClass("phoneme") && target.hasClass("phoneme")) {
+            el.removeClass("direction_0 direction_1 direction_2 direction_3");
+            target.removeClass("direction_0 direction_1 direction_2 direction_3");
+            let elIndex = el.attr("index");
+            clearInterval(intervals[elIndex]);
+            let targetIndex = target.attr("index");
+            clearInterval(intervals[targetIndex]);
+            set_a_phoneme_in_motion(el);
+            set_a_phoneme_in_motion(target);
+            return;
         }
 
         // Default
@@ -259,6 +273,7 @@ $(document).ready(() => {
             pickedTd.addClass(phoneme[prop]);
         }
         pickedTd.html(phoneme.ipa).addClass("phoneme").attr("index", phonemeIndex);
+        set_a_phoneme_in_motion(pickedTd);
         phonemeIndex++;
     }
 
@@ -268,6 +283,31 @@ $(document).ready(() => {
         current = questions[index]["classes"];
     }
 
-    generate_random_question();
+    const set_a_phoneme_in_motion = (phoneme) => {
+        console.log(phoneme);
+        let random_movement = Math.floor(Math.random() * 4);
+        phoneme.addClass("direction_"+random_movement+"");
+        switch(random_movement) {
+            case 0:
+                move_up_and_down(phoneme, pace);
+                break;
+            case 1:
+                move_left_and_right(phoneme, pace);
+                break;
+            case 2:
+                move_diagonal_1(phoneme, pace);
+                break;
+            default: 
+                move_diagonal_2(phoneme, pace);
+        }
+    }
+    
+    put_a_phoneme_on_the_board(consonants[0]);
+    put_a_phoneme_on_the_board(consonants[1]);
+    put_a_phoneme_on_the_board(consonants[2]);
+    put_a_phoneme_on_the_board(consonants[3]);
+
+
+    console.log(intervals);
 
 });

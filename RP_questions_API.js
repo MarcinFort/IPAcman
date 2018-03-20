@@ -106,7 +106,17 @@ export const questions = [
     },
 
     {
+        question: "a lenis plosive",
+        classes: ["b", "d", "g"]
+    },
+
+    {
         question: "a voiceless plosive",
+        classes: ["p", "t", "k"]
+    },
+
+    {
+        question: "a fortis plosive",
         classes: ["p", "t", "k"]
     },
 
@@ -128,6 +138,16 @@ export const questions = [
     {
         question: "a voiceless affricate",
         classes: ["tS"]
+    },
+
+    {
+        question: "a voiced obstruent",
+        classes: ["b", "d", "g", "v", "z", "Z", "D", "dZ"]
+    },
+
+    {
+        question: "a voiceless obstruent",
+        classes: ["p", "t", "k", "f", "s", "S", "T", "tS", "h"]
     },
 
     {
@@ -373,5 +393,90 @@ export const questions = [
     {
         question: "a centring diphthong",
         classes: ["centring"]
+    },
+
+    {
+        question: "a front close vowel",
+        classes: ["i:", "I"]
+    },
+
+    {
+        question: "a front close long vowel",
+        classes: ["i:"]
+    },
+
+    {
+        question: "a front close short vowel",
+        classes: ["I"]
+    },
+
+    {
+        question: "a front mid vowel",
+        classes: ["e"]
+    },
+
+    {
+        question: "a front open vowel",
+        classes: ["{"]
+    },
+
+    {
+        question: "a front short vowel",
+        classes: ["I", "{", "e"]
+    },    
+
+    {
+        question: "a central mid vowel",
+        classes: ["@", "3:"]
+    },
+
+    {
+        question: "a central mid reduced vowel",
+        classes: ["@"]
+    },
+
+    {
+        question: "a central mid long vowel",
+        classes: ["3:"]
+    },    
+
+    {
+        question: "a central open vowel",
+        classes: ["V"]
+    },
+
+    {
+        question: "a back close vowel",
+        classes: ["U", "u:"]
+    },
+
+    {
+        question: "a back close short vowel",
+        classes: ["U"]
+    },
+
+    {
+        question: "a back close long vowel",
+        classes: ["u:"]
+    },    
+
+    {
+        question: "a back mid vowel",
+        classes: ["O:"]
+    },
+
+    {
+        question: "a back open long vowel",
+        classes: ["A:"]
+    },
+
+    {
+        question: "a back rounded vowel",
+        classes: ["u:", "U", "O:", "Q"]
+    },
+    
+    {
+        question: "a back open short vowel",
+        classes: ["Q"]
     }
 ]

@@ -1,4 +1,5 @@
-import { consonants, vowels, phonemes, questions } from './RP_segments_api.js';
+import { consonants, vowels, phonemes } from './RP_segments_api.js';
+import { questions } from './RP_questions_API.js';
 
 $(document).ready(() => {
 
@@ -266,5 +267,7 @@ $(document).ready(() => {
         $('#current_search').html(questions[index]["question"]);
         current = questions[index]["classes"];
     }
+
+    generate_random_question();
 
 });

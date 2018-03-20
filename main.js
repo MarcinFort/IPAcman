@@ -24,7 +24,7 @@ $(document).ready(() => {
     let lives = 3;
     let phonemeIndex = 0;
     let intervals = [];
-    let pace = 1000;
+    let pace = 800;
 
     // Movement functions
 
@@ -73,9 +73,14 @@ $(document).ready(() => {
             clearInterval(intervals[index]);
             if (check_if_phoneme_current()) {
                 score++;
+                $("#score_span").html(score);
+                generate_random_question();
             } else {
                 lives--;
+                $("#lives_span").html(lives);
             }
+            new_phoneme_on_the_board();
+
         }
 
         // Handle phoneme vs. phoneme contact
@@ -284,7 +289,6 @@ $(document).ready(() => {
     }
 
     const set_a_phoneme_in_motion = (phoneme) => {
-        console.log(phoneme);
         let random_movement = Math.floor(Math.random() * 4);
         phoneme.addClass("direction_"+random_movement+"");
         switch(random_movement) {
@@ -301,13 +305,18 @@ $(document).ready(() => {
                 move_diagonal_2(phoneme, pace);
         }
     }
-    
-    put_a_phoneme_on_the_board(consonants[0]);
-    put_a_phoneme_on_the_board(consonants[1]);
-    put_a_phoneme_on_the_board(consonants[2]);
-    put_a_phoneme_on_the_board(consonants[3]);
 
+    const new_phoneme_on_the_board = () => {
+        put_a_phoneme_on_the_board(generate_random_phoneme("any"));
+    }
 
-    console.log(intervals);
+    new_phoneme_on_the_board();
+    new_phoneme_on_the_board();
+    new_phoneme_on_the_board();
+    new_phoneme_on_the_board();
+    new_phoneme_on_the_board();
+    new_phoneme_on_the_board();
+
+    generate_random_question();    
 
 });

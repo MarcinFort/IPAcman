@@ -19,11 +19,12 @@ $(document).ready(() => {
 
     // Global variables
 
-    let current;
+    let currently_searched;
     let score = 0;
     let lives = 3;
     let phonemeIndex = 0;
     let intervals = [];
+    let phonemes_on_the_board = [];
     let pace = 800;
 
     // Movement functions
@@ -62,7 +63,7 @@ $(document).ready(() => {
 
         const check_if_phoneme_current = () => {
             let class_list = target[0].className.split(" ");
-            return current.some(x => class_list.includes(x));
+            return currently_searched.some(x => class_list.includes(x));
         }
 
         if (el.hasClass('pacman') && target.hasClass('phoneme')) {
@@ -71,6 +72,7 @@ $(document).ready(() => {
             target.html("");
             let index = target.attr("index");
             clearInterval(intervals[index]);
+            phonemes_on_the_board[index] = null;
             if (check_if_phoneme_current()) {
                 score++;
                 $("#score_span").html(score);
@@ -273,19 +275,31 @@ $(document).ready(() => {
             pos = generate_random_position();
             pickedTd = $table.find("tr:nth-child("+pos[0]+")").find("td:nth-child("+pos[1]+")");
         }
-
+        
         for (let prop in phoneme) {
             pickedTd.addClass(phoneme[prop]);
         }
         pickedTd.html(phoneme.ipa).addClass("phoneme").attr("index", phonemeIndex);
+        phonemes_on_the_board[phonemeIndex] = phoneme;
         set_a_phoneme_in_motion(pickedTd);
         phonemeIndex++;
     }
 
     const generate_random_question = () => {
+        let classes_of_phonemes_on_the_board = [];
+        phonemes_on_the_board.forEach(x => {
+            for (let prop in x) {
+                classes_of_phonemes_on_the_board.push(x[prop]);
+            }
+        });
         let index = Math.floor(Math.random()*questions.length);
+        while (!classes_of_phonemes_on_the_board.some(
+            x => questions[index]["classes"].indexOf(x) > -1
+        )) {
+            index = Math.floor(Math.random()*questions.length);
+        }
         $('#current_search').html(questions[index]["question"]);
-        current = questions[index]["classes"];
+        currently_searched = questions[index]["classes"];
     }
 
     const set_a_phoneme_in_motion = (phoneme) => {

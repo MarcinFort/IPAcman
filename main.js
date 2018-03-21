@@ -66,23 +66,28 @@ $(document).ready(() => {
             return currently_searched.some(x => class_list.includes(x));
         }
 
-        if (el.hasClass('pacman') && target.hasClass('phoneme')) {
-            
+        const eat_a_phoneme = () => {
             target.removeClass();
             target.html("");
             let index = target.attr("index");
             clearInterval(intervals[index]);
             phonemes_on_the_board[index] = null;
-            new_phoneme_on_the_board();
+            new_phoneme_on_the_board(); 
+        }
+
+        if (el.hasClass('pacman') && target.hasClass('phoneme')) {
+            
             if (check_if_phoneme_current()) {
                 score++;
                 $("#score_span").html(score);
+                eat_a_phoneme();           
                 generate_random_question();
             } else {
                 lives--;
                 $("#lives_span").html(lives);
+                eat_a_phoneme();
             }
-            
+
         }
 
         // Handle phoneme vs. phoneme contact

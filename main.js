@@ -73,6 +73,7 @@ $(document).ready(() => {
             let index = target.attr("index");
             clearInterval(intervals[index]);
             phonemes_on_the_board[index] = null;
+            new_phoneme_on_the_board();
             if (check_if_phoneme_current()) {
                 score++;
                 $("#score_span").html(score);
@@ -81,8 +82,7 @@ $(document).ready(() => {
                 lives--;
                 $("#lives_span").html(lives);
             }
-            new_phoneme_on_the_board();
-
+            
         }
 
         // Handle phoneme vs. phoneme contact

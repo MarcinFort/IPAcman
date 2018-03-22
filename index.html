@@ -10,6 +10,20 @@
         <div id="container"></div>
         <div id="info">
             <div id="logo" class="info_div">IPAcman</div>
+            <div id="start">
+                I would like to learn: <br/> 
+                <select>
+                    <option value="conservative_RP">Conservative RP</option>
+                </select><br/>
+                Choose your pace:<br/>
+                <input type="radio" name="pace" value="still"><span class="pace_span"> Still</span>
+                <input type="radio" name="pace" value="slow"><span class="pace_span"> Slow</span>
+                <input type="radio" name="pace" value="medium"><span class="pace_span"> Medium</span>
+                <input type="radio" name="pace" value="fast"><span class="pace_span"> Fast</span>
+                <br/>
+                <div id="start_button">START</div>
+                <div id="timer"><span id="minutes">00</span>:<span id="seconds">00</span></div>
+            </div>
             <div id="instructions" class="info_div">Now I would like to eat....
                 <div id="current_search"></div>
                 <span>Remember that all other phonemes poison me :(</span>
@@ -20,6 +34,7 @@
                 Lives: <span id="lives_span">3</span>
             </div>
             <div id="leaderboard" class="info_div">
+                The best scores for the current pace:
                 <ol>
                     <li></li>
                     <li></li>

@@ -1,5 +1,5 @@
 body {
-    background-color: darkgoldenrod;
+    background-image: url("./assets/Dhi_Fonetik_Titcer_background.png");
 }
 
 table {
@@ -12,6 +12,10 @@ td {
     height: 34px;
     padding: 1px;
     box-sizing: border-box;
+}
+
+select, input {
+    margin-bottom: 10px;
 }
 
 .pacman {
@@ -51,7 +55,10 @@ td {
     margin-left: 3%;
     width: 20%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 25px;
+    font-size: 16px;
+    background-color: whitesmoke;
+    opacity: 0.9;
+    border-radius: 10px;
 }
 
 .info-div {
@@ -69,28 +76,49 @@ td {
     padding-bottom: 25px;
 }
 
+#start {
+    text-align: center;
+}
+
+#timer, #score {
+    font-size: 20px;
+}
+
+.pace_span {
+    font-size: 16px; 
+}
+
+#start_button {
+    height: 50px;
+}
+
 #instructions {
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
 #instructions span {
-    font-size: 15px;
+    font-size: 13px;
 }
 
-#current_search {
+#current_search, #start_button {
     background-color: yellow;
     width: 378px;
-    height: 100px;
     text-align: center;
     vertical-align: middle;
     display: table-cell;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+#current_search {
+    height: 100px;
 }
 
 #score, #leaderboard {
     padding-top: 15px;
     padding-bottom: 15px;
-    text-align: left;
+    text-align: center;
 }
 
 

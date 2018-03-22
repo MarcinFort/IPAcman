@@ -17,6 +17,14 @@ $(document).ready(() => {
     }
     $board.append($table);
 
+    // Render Pacman
+
+    const renderPacman = () => {
+        $('table > tr:first > td:first').addClass('pacman right');
+    }
+
+    renderPacman();
+
     // Global variables
 
     let currently_searched;
@@ -30,20 +38,47 @@ $(document).ready(() => {
 
     // Starting game
 
-    $(document).on("click", "#start_button", () => startGame());
+    $(document).on("click", "#start_button", () => {
+        if (!game) {
+            startGame();
+        } else {
+            stopGame();
+        }
+    });
 
     const startGame = () => {
-        game = true;
-        $("select").attr("disabled", true);
-        $("input").attr("disabled", true);
-        pace = $('input:checked').val();
+        if (!game) {
+            game = true;
+            $("select").attr("disabled", true);
+            $("input").attr("disabled", true);
+            pace = $('input:checked').val();
 
-        for (let i = 0; i < 6; i++) {
-            new_phoneme_on_the_board();
+            for (let i = 0; i < 6; i++) {
+                new_phoneme_on_the_board();
+            }
+
+            generate_random_question();
+            $("#start_button").html("STOP");
         }
+    }
 
-        generate_random_question();    
-    
+    // Stopping game
+
+    const stopGame = () => {
+        if (game) {
+            game = false;
+            $("select").attr("disabled", false);
+            $("input").attr("disabled", false);
+            score = 0;
+            lives = 3;
+            phonemeIndex = 0;
+            intervals.forEach(x => clearInterval(x));
+            intervals = [];
+            $("td").removeClass().html("");
+            renderPacman();
+            currently_searched = [];
+            $("#start_button").html("START");
+        }
     }
 
     // Movement functions
@@ -146,9 +181,7 @@ $(document).ready(() => {
         
     }
 
-    // Render Pacman and bind keycodes
-
-    $('table > tr:first > td:first').addClass('pacman right');
+    // Bind Pacman keycodes
 
     $(document).keydown(function (e) {
         let $pacman = $('.pacman');

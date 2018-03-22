@@ -51,7 +51,9 @@ $(document).ready(() => {
             game = true;
             $("select").attr("disabled", true);
             $("input").attr("disabled", true);
-            pace = $('input:checked').val();
+            if ($('input:checked').val()) {
+                pace = $('input:checked').val();
+            }
 
             for (let i = 0; i < 6; i++) {
                 new_phoneme_on_the_board();
@@ -74,6 +76,7 @@ $(document).ready(() => {
             phonemeIndex = 0;
             intervals.forEach(x => clearInterval(x));
             intervals = [];
+            pace = undefined;
             $("td").removeClass().html("");
             renderPacman();
             currently_searched = [];
@@ -184,26 +187,28 @@ $(document).ready(() => {
     // Bind Pacman keycodes
 
     $(document).keydown(function (e) {
-        let $pacman = $('.pacman');
-        let elClass2;
-        if (e.keyCode > 36 && e.keyCode < 41) {
-            e.preventDefault();
-            $pacman.removeClass('left right up down');
-            switch(e.keyCode) {
-                case 37:
-                    elClass2 = 'left';
-                    break;
-                case 38:
-                    elClass2 = 'up';
-                    break;
-                case 39:
-                    elClass2 = 'right';
-                    break;
-                default:
-                    elClass2 = 'down';
+        if (game) {
+            let $pacman = $('.pacman');
+            let elClass2;
+            if (e.keyCode > 36 && e.keyCode < 41) {
+                e.preventDefault();
+                $pacman.removeClass('left right up down');
+                switch(e.keyCode) {
+                    case 37:
+                        elClass2 = 'left';
+                        break;
+                    case 38:
+                        elClass2 = 'up';
+                        break;
+                    case 39:
+                        elClass2 = 'right';
+                        break;
+                    default:
+                        elClass2 = 'down';
+                }
+                $pacman.addClass(elClass2);
+                movement($pacman, e.keyCode);
             }
-            $pacman.addClass(elClass2);
-            movement($pacman, e.keyCode);
         }
     });
 

@@ -25,7 +25,26 @@ $(document).ready(() => {
     let phonemeIndex = 0;
     let intervals = [];
     let phonemes_on_the_board = [];
-    let pace = 800;
+    let pace;
+    let game = false;
+
+    // Starting game
+
+    $(document).on("click", "#start_button", () => startGame());
+
+    const startGame = () => {
+        game = true;
+        $("select").attr("disabled", true);
+        $("input").attr("disabled", true);
+        pace = $('input:checked').val();
+
+        for (let i = 0; i < 6; i++) {
+            new_phoneme_on_the_board();
+        }
+
+        generate_random_question();    
+    
+    }
 
     // Movement functions
 
@@ -329,13 +348,5 @@ $(document).ready(() => {
         put_a_phoneme_on_the_board(generate_random_phoneme("any"));
     }
 
-    new_phoneme_on_the_board();
-    new_phoneme_on_the_board();
-    new_phoneme_on_the_board();
-    new_phoneme_on_the_board();
-    new_phoneme_on_the_board();
-    new_phoneme_on_the_board();
-
-    generate_random_question();    
 
 });

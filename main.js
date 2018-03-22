@@ -72,12 +72,16 @@ $(document).ready(() => {
             $("select").attr("disabled", false);
             $("input").attr("disabled", false);
             score = 0;
+            $("#score_span").html(score);
             lives = 3;
+            $("#lives_span").html(lives);
+            $("#current_search").html("");
             phonemeIndex = 0;
+            phonemes_on_the_board = [];
             intervals.forEach(x => clearInterval(x));
             intervals = [];
             pace = undefined;
-            $("td").removeClass().html("");
+            $("td").removeClass().html("").removeAttr("index");
             renderPacman();
             currently_searched = [];
             $("#start_button").html("START");
@@ -129,7 +133,7 @@ $(document).ready(() => {
             let index = target.attr("index");
             clearInterval(intervals[index]);
             phonemes_on_the_board[index] = null;
-            new_phoneme_on_the_board(); 
+            new_phoneme_on_the_board();
         }
 
         if (el.hasClass('pacman') && target.hasClass('phoneme')) {

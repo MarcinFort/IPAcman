@@ -68,6 +68,7 @@ $(document).ready(() => {
 
     const stopGame = () => {
         if (game) {
+            add_score_to_leaderboard();
             game = false;
             $("select").attr("disabled", false);
             $("input").attr("disabled", false);
@@ -87,6 +88,28 @@ $(document).ready(() => {
             $("#start_button").html("START");
         }
     }
+
+    // Leaderboard
+
+    const add_score_to_leaderboard = () => {
+        var best_score = JSON.parse(localStorage.getItem("ipacman-best-score")) || [];
+        best_score.push({user: prompt(`GAME OVER. Your final score is ${score}. Name: `), score: score});
+        best_score.sort((a, b) => a.score < b.score);
+        localStorage.setItem("ipacman-best-score", JSON.stringify(best_score));
+        populate_leaderboard();
+    }
+
+    const populate_leaderboard = () => {
+        if (localStorage.getItem("ipacman-best-score") !== null) {
+            for (let i = 0; i < 3; i++) {
+                if (JSON.parse(localStorage.getItem("ipacman-best-score"))[i] != undefined) {
+                    $("#leaderboard li:nth-child(" + (i + 1) + ")").text((JSON.parse(localStorage.getItem("ipacman-best-score"))[i].user) + ": " + (JSON.parse(localStorage.getItem("ipacman-best-score"))[i].score));
+                }
+            }
+        }
+    }
+
+    populate_leaderboard();
 
     // Movement functions
 
@@ -147,6 +170,9 @@ $(document).ready(() => {
                 lives--;
                 $("#lives_span").html(lives);
                 eat_a_phoneme();
+                if (lives === 0) {
+                    stopGame();
+                }
             }
 
         }

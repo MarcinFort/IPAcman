@@ -171,12 +171,16 @@ $(document).ready(() => {
             if (check_if_phoneme_current()) {
                 score++;
                 $("#score_span").html(score);
-                eat_a_phoneme();           
+                eat_a_phoneme();
+                $('.pacman').addClass('success');
+                setTimeout(() => $('.pacman').removeClass('success'), 250);       
                 generate_random_question();
             } else {
                 lives--;
                 $("#lives_span").html(lives);
                 eat_a_phoneme();
+                $('.pacman').addClass('failure');
+                setTimeout(() => $('.pacman').removeClass('failure'), 250);       
                 if (lives === 0) {
                     stopGame();
                 }

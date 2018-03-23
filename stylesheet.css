@@ -20,6 +20,7 @@ select, input {
 
 .pacman {
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 .pacman.right {
@@ -36,6 +37,14 @@ select, input {
 
 .pacman.down {
     background-image: url(assets/pacman-down.png);
+}
+
+.pacman.success {
+    background-color: green;
+}
+
+.pacman.failure {
+    background-color: red;
 }
 
 .phoneme {

@@ -33,7 +33,7 @@ $(document).ready(() => {
     let phonemeIndex = 0;
     let intervals = [];
     let phonemes_on_the_board = [];
-    let pace;
+    let pace = 1200;
     let game = false;
 
     // Starting game
@@ -51,10 +51,6 @@ $(document).ready(() => {
             game = true;
             $("select").attr("disabled", true);
             $("input").attr("disabled", true);
-            if ($('input:checked').val()) {
-                pace = $('input:checked').val();
-            }
-
             for (let i = 0; i < 6; i++) {
                 new_phoneme_on_the_board();
             }
@@ -92,24 +88,33 @@ $(document).ready(() => {
     // Leaderboard
 
     const add_score_to_leaderboard = () => {
-        var best_score = JSON.parse(localStorage.getItem("ipacman-best-score")) || [];
+        var best_score = JSON.parse(localStorage.getItem(`ipacman-best-score-${pace}`)) || [];
         best_score.push({user: prompt(`GAME OVER. Your final score is ${score}. Name: `), score: score});
         best_score.sort((a, b) => a.score < b.score);
-        localStorage.setItem("ipacman-best-score", JSON.stringify(best_score));
+        localStorage.setItem(`ipacman-best-score-${pace}`, JSON.stringify(best_score));
         populate_leaderboard();
     }
 
     const populate_leaderboard = () => {
-        if (localStorage.getItem("ipacman-best-score") !== null) {
+        if (localStorage.getItem(`ipacman-best-score-${pace}`) !== null) {
             for (let i = 0; i < 3; i++) {
-                if (JSON.parse(localStorage.getItem("ipacman-best-score"))[i] != undefined) {
-                    $("#leaderboard li:nth-child(" + (i + 1) + ")").text((JSON.parse(localStorage.getItem("ipacman-best-score"))[i].user) + ": " + (JSON.parse(localStorage.getItem("ipacman-best-score"))[i].score));
+                if (JSON.parse(localStorage.getItem(`ipacman-best-score-${pace}`))[i] != undefined) {
+                    $("#leaderboard li:nth-child(" + (i + 1) + ")").text((JSON.parse(localStorage.getItem(`ipacman-best-score-${pace}`))[i].user) + ": " + (JSON.parse(localStorage.getItem(`ipacman-best-score-${pace}`))[i].score));
                 }
             }
         }
     }
 
     populate_leaderboard();
+
+    $('input').on('change', () => {
+        if ($('input:checked').val()) {
+            pace = $('input:checked').val();
+        } else {
+            pace = undefined;
+        }
+        populate_leaderboard();
+    });
 
     // Movement functions
 

@@ -216,7 +216,7 @@ $(document).ready(() => {
 
     // Bind Pacman keycodes
 
-    $(document).keydown(function (e) {
+    $(document).keydown(e => {
         if (game) {
             let $pacman = $('.pacman');
             let elClass2;
@@ -247,7 +247,7 @@ $(document).ready(() => {
     const move_up_and_down = (el, pace) => {
         let direction = Math.random() < 0.5 ? 38 : 40;
         let index = el.attr("index");
-        let interval = setInterval(function() {
+        let interval = setInterval(() => {
             if ((el.parent().prev().find('td').eq(el.index())).length === 0) {
                 direction = 40;
             }
@@ -265,7 +265,7 @@ $(document).ready(() => {
     const move_left_and_right = (el, pace) => {
         let direction = Math.random() < 0.5 ? 37 : 39;
         let index = el.attr("index");
-        let interval = setInterval(function() {
+        let interval = setInterval(() => {
             if (el.prev().length === 0) {
                 direction = 39;
             }
@@ -283,7 +283,7 @@ $(document).ready(() => {
     const move_diagonal_1 = (el, pace) => {
         let direction = Math.random() < 0.5 ? "left_up" : "right_down";
         let index = el.attr("index");
-        let interval = setInterval(function() {
+        let interval = setInterval(() => {
             if (el.prev().length === 0 || el.parent().prev().find('td').length === 0) {
                 direction = "right_down";
             }
@@ -311,7 +311,7 @@ $(document).ready(() => {
     const move_diagonal_2 = (el, pace) => {
         let direction = Math.random() < 0.5 ? "left_down" : "right_up";
         let index = el.attr("index");
-        let interval = setInterval(function() {
+        let interval = setInterval(() => {
             if (el.prev().length === 0 || el.parent().next().find('td').length === 0) {
                 direction = "right_up";
             }

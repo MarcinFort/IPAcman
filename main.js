@@ -35,6 +35,7 @@ $(document).ready(() => {
     let phonemes_on_the_board = [];
     let pace = 1200;
     let game = false;
+    $('input[value=1200]').prop('checked', true);
 
     // Starting game
 
@@ -77,7 +78,6 @@ $(document).ready(() => {
             phonemes_on_the_board = [];
             intervals.forEach(x => clearInterval(x));
             intervals = [];
-            pace = undefined;
             $("td").removeClass().html("").removeAttr("index");
             renderPacman();
             currently_searched = [];
@@ -88,8 +88,10 @@ $(document).ready(() => {
     // Leaderboard
 
     const add_score_to_leaderboard = () => {
-        var best_score = JSON.parse(localStorage.getItem(`ipacman-best-score-${pace}`)) || [];
-        best_score.push({user: prompt(`GAME OVER. Your final score is ${score}. Name: `), score: score});
+        let best_score = JSON.parse(localStorage.getItem(`ipacman-best-score-${pace}`)) || [];
+        let username = prompt(`GAME OVER. Your final score is ${score}. Name: `);
+        if (!username) { username = "Anonymous" };
+        best_score.push({user: username, score: score});
         best_score.sort((a, b) => a.score < b.score);
         localStorage.setItem(`ipacman-best-score-${pace}`, JSON.stringify(best_score));
         populate_leaderboard();

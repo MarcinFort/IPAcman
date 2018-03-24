@@ -98,6 +98,9 @@ $(document).ready(() => {
     }
 
     const populate_leaderboard = () => {
+        for (let i = 0; i < 3; i++) {
+            $("#leaderboard li:nth-child(" + (i + 1) + ")").text("Empty");
+        }
         if (localStorage.getItem(`ipacman-best-score-${pace}`) !== null) {
             for (let i = 0; i < 3; i++) {
                 if (JSON.parse(localStorage.getItem(`ipacman-best-score-${pace}`))[i] != undefined) {

@@ -211,6 +211,95 @@ $(document).ready(() => {
 
         }
 
+        // Handle phoneme vs. wall contact
+
+        if (target.length === 0 && el.hasClass("phoneme")) {
+            let elIndex = el.attr("index");
+            clearInterval(intervals[elIndex]);
+            let elDirection = el.attr("direction");
+            let random_number = (Math.floor(Math.random()*3));
+            let newDirection;
+            switch (elDirection) {
+                case 37:
+                    if (random_number === 0) {
+                        newDirection = 'UpRight';
+                    } else if (random_number === 1) {
+                        newDirection = 39;
+                    } else {
+                        newDirection = 'DownRight';
+                    }
+                    break;
+                case 38:
+                    if (random_number === 0) {
+                        newDirection = 'DownLeft';
+                    } else if (random_number === 1) {
+                        newDirection = 40;
+                    } else {
+                        newDirection = 'DownRight';
+                    }
+                    break;
+                case 39:
+                    if (random_number === 0) {
+                        newDirection = 'UpLeft';
+                    } else if (random_number === 1) {
+                        newDirection = 37;
+                    } else {
+                        newDirection = 'DownLeft';
+                    }
+                    break;
+                case 40:
+                    if (random_number === 0) {
+                        newDirection = 'UpLeft';
+                    } else if (random_number === 1) {
+                        newDirection = 38;
+                    } else {
+                        newDirection = 'UpRight';
+                    }
+                    break;
+                case 'UpLeft':
+                    if (random_number === 0) {
+                        newDirection = 'DownRight';
+                    } else if (random_number === 1) {
+                        newDirection = 39;
+                    } else {
+                        newDirection = 40;
+                    }
+                    break;
+                case 'UpRight':
+                    if (random_number === 0) {
+                        newDirection = 'DownLeft';
+                    } else if (random_number === 1) {
+                        newDirection = 40;
+                    } else {
+                        newDirection = 37;
+                    }
+                    break;
+                case 'DownLeft':
+                    if (random_number === 0) {
+                        newDirection = 'UpRight';
+                    } else if (random_number === 1) {
+                        newDirection = 38;
+                    } else {
+                        newDirection = 39;
+                    }
+                    break;
+                case 'DownRight':
+                    if (random_number === 0) {
+                        newDirection = 'UpLeft';
+                    } else if (random_number === 1) {
+                        newDirection = 38;
+                    } else {
+                        newDirection = 37;
+                    }
+                    break;
+                default:
+                    return;
+            }
+            el.attr("direction", newDirection);
+            set_movement_interval(el, newDirection, pace);
+            return;
+        }
+
         // Handle phoneme vs. phoneme contact
         
         if (el.hasClass("phoneme") && target.hasClass("phoneme")) {
@@ -245,7 +334,12 @@ $(document).ready(() => {
             el.attr("index", null);
             target.attr("index", index);
         }
-        
+
+        if (el.attr("direction")) {
+            let direction = el.attr("direction");
+            el.attr("direction", null);
+            target.attr("direction", direction);
+        }
     }
 
     // Bind Pacman keycodes
@@ -351,7 +445,6 @@ $(document).ready(() => {
 
     const set_a_phoneme_in_motion = (phoneme) => {
         let random_movement = Math.floor(Math.random() * 8);
-        phoneme.addClass("direction_"+random_movement+"");
         let direction;
         switch(random_movement) {
             case 0:
@@ -378,6 +471,7 @@ $(document).ready(() => {
             default:
                 direction = 'DownRight';
         }
+        phoneme.attr("direction", direction);
         set_movement_interval(phoneme, direction, pace);
     }
 

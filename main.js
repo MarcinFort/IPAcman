@@ -387,7 +387,9 @@ $(document).ready(() => {
         }
         pickedTd.html(phoneme.ipa).addClass("phoneme").attr("index", phonemeIndex);
         phonemes_on_the_board[phonemeIndex] = phoneme;
-        set_a_phoneme_in_motion(pickedTd);
+        if (pace) {
+            set_a_phoneme_in_motion(pickedTd)
+        };
         phonemeIndex++;
     }
 

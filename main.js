@@ -138,6 +138,7 @@ $(document).ready(() => {
 
         let target = null;
         switch(direction) {
+            // The first four cases are relevant for Pacman, so we use keycodes; the remaining ones apply to phonemes only
             case 37:
                 target = moveLeft(el);
                 break;
@@ -147,8 +148,23 @@ $(document).ready(() => {
             case 39:
                 target = moveRight(el);
                 break;
-            default:
+            case 40:
                 target = moveDown(el);
+                break;
+            case 'UpLeft':
+                target = moveUpLeft(el);
+                break;
+            case 'UpRight':
+                target = moveUpRight(el);
+                break;
+            case 'DownLeft':
+                target = moveDownRight(el);
+                break;
+            case 'DownRight':
+                target = moveDownRight(el);
+                break;
+            default:
+                return;
         }
 
         // Block movement in some cases

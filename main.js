@@ -57,7 +57,7 @@ $(document).ready(() => {
             }
 
             generate_random_question();
-            $("#start_button").html("STOP");
+            $("#start_button").html("QUIT GAME");
         }
     }
 
@@ -81,7 +81,7 @@ $(document).ready(() => {
             $("td").removeClass().html("").removeAttr("index");
             renderPacman();
             currently_searched = [];
-            $("#start_button").html("START");
+            $("#start_button").html("START GAME");
         }
     }
 

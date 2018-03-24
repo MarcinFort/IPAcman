@@ -276,74 +276,13 @@ $(document).ready(() => {
         }
     });
 
-    // 1. Up and down
+    // Movement interval function
 
-    const move_up_and_down = (el, pace) => {
-        let direction = Math.random() < 0.5 ? 38 : 40;
+    const set_movement_interval = (el, direction, pace) => {
         let index = el.attr("index");
         let interval = setInterval(() => {
-            if ((el.parent().prev().find('td').eq(el.index())).length === 0) {
-                direction = 40;
-            }
-            if ((el.parent().next().find('td').eq(el.index())).length === 0) {
-                direction = 38;
-            }
             movement (el, direction);
             el = $table.find('td[index='+index+']');
-        }, pace, el);
-        intervals[index] = interval;
-    };
-
-    // 2. Left and right
-
-    const move_left_and_right = (el, pace) => {
-        let direction = Math.random() < 0.5 ? 37 : 39;
-        let index = el.attr("index");
-        let interval = setInterval(() => {
-            if (el.prev().length === 0) {
-                direction = 39;
-            }
-            if (el.next().length === 0) {
-                direction = 37;
-            }
-            movement (el, direction);
-            el = $table.find('td[index='+index+']');
-        }, pace, el);
-        intervals[index] = interval;
-    };
-
-    // 3. Diagonal I
-
-    const move_diagonal_1 = (el, pace) => {
-        let direction = Math.random() < 0.5 ? "UpLeft" : "DownRight";
-        let index = el.attr("index");
-        let interval = setInterval(() => {
-            if (el.prev().length === 0 || el.parent().prev().find('td').length === 0) {
-                direction = "DownRight";
-            }
-            if (el.next().length === 0 || el.parent().next().find('td').length === 0) {
-                direction = "UpLeft";
-            }
-            movement (el, direction);
-            el = $table.find('td[index='+index+']');         
-        }, pace, el);
-        intervals[index] = interval;
-    };
-
-    // 4. Diagonal II
-
-    const move_diagonal_2 = (el, pace) => {
-        let direction = Math.random() < 0.5 ? "DownLeft" : "UpRight";
-        let index = el.attr("index");
-        let interval = setInterval(() => {
-            if (el.prev().length === 0 || el.parent().next().find('td').length === 0) {
-                direction = "UpRight";
-            }
-            if (el.next().length === 0 || el.parent().prev().find('td').length === 0) {
-                direction = "DownLeft";
-            }
-            movement (el, direction);
-            el = $table.find('td[index='+index+']');                  
         }, pace, el);
         intervals[index] = interval;
     };
@@ -411,21 +350,35 @@ $(document).ready(() => {
     }
 
     const set_a_phoneme_in_motion = (phoneme) => {
-        let random_movement = Math.floor(Math.random() * 4);
+        let random_movement = Math.floor(Math.random() * 8);
         phoneme.addClass("direction_"+random_movement+"");
+        let direction;
         switch(random_movement) {
             case 0:
-                move_up_and_down(phoneme, pace);
+                direction = 37;
                 break;
             case 1:
-                move_left_and_right(phoneme, pace);
+                direction = 38; 
                 break;
             case 2:
-                move_diagonal_1(phoneme, pace);
+                direction = 39;
                 break;
-            default: 
-                move_diagonal_2(phoneme, pace);
+            case 3:
+                direction = 40;
+                break;
+            case 4:
+                direction = 'UpLeft';
+                break;
+            case 5:
+                direction = 'UpRight';
+                break;
+            case 6:
+                direction = 'DownLeft';
+                break;
+            default:
+                direction = 'DownRight';
         }
+        set_movement_interval(phoneme, direction, pace);
     }
 
     const new_phoneme_on_the_board = () => {

@@ -123,10 +123,14 @@ $(document).ready(() => {
 
     // Movement functions
 
-    const moveLeft = (el => el.prev());
-    const moveRight = (el => el.next());
-    const moveUp = (el => el.parent().prev().find('td').eq(el.index()));
-    const moveDown = (el => el.parent().next().find('td').eq(el.index()));
+    const moveLeft = el => el.prev();
+    const moveRight = el => el.next();
+    const moveUp = el => el.parent().prev().find('td').eq(el.index());
+    const moveDown = el => el.parent().next().find('td').eq(el.index());
+    const moveUpLeft = el => el.parent().prev().find('td').eq(el.index() - 1);
+    const moveUpRight = el => el.parent().prev().find('td').eq(el.index() + 1);
+    const moveDownLeft = el => el.parent().next().find('td').eq(el.index() - 1);
+    const moveDownRight = el => el.parent().next().find('td').eq(el.index() + 1);
 
     const movement = (el, direction) => {
 

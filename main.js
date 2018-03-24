@@ -315,27 +315,17 @@ $(document).ready(() => {
     // 3. Diagonal I
 
     const move_diagonal_1 = (el, pace) => {
-        let direction = Math.random() < 0.5 ? "left_up" : "right_down";
+        let direction = Math.random() < 0.5 ? "UpLeft" : "DownRight";
         let index = el.attr("index");
         let interval = setInterval(() => {
             if (el.prev().length === 0 || el.parent().prev().find('td').length === 0) {
-                direction = "right_down";
+                direction = "DownRight";
             }
             if (el.next().length === 0 || el.parent().next().find('td').length === 0) {
-                direction = "left_up";
+                direction = "UpLeft";
             }
-            if (direction === "left_up") {
-                movement (el, 37);
-                el = $table.find('td[index='+index+']');
-                movement (el, 38);
-                el = $table.find('td[index='+index+']');
-            }
-            if (direction === "right_down") {
-                movement (el, 39);
-                el = $table.find('td[index='+index+']');
-                movement (el, 40);
-                el = $table.find('td[index='+index+']');
-            }            
+            movement (el, direction);
+            el = $table.find('td[index='+index+']');         
         }, pace, el);
         intervals[index] = interval;
     };
@@ -343,27 +333,17 @@ $(document).ready(() => {
     // 4. Diagonal II
 
     const move_diagonal_2 = (el, pace) => {
-        let direction = Math.random() < 0.5 ? "left_down" : "right_up";
+        let direction = Math.random() < 0.5 ? "DownLeft" : "UpRight";
         let index = el.attr("index");
         let interval = setInterval(() => {
             if (el.prev().length === 0 || el.parent().next().find('td').length === 0) {
-                direction = "right_up";
+                direction = "UpRight";
             }
             if (el.next().length === 0 || el.parent().prev().find('td').length === 0) {
-                direction = "left_down";
+                direction = "DownLeft";
             }
-            if (direction === "left_down") {
-                movement (el, 37);
-                el = $table.find('td[index='+index+']');
-                movement (el, 40);
-                el = $table.find('td[index='+index+']');
-            }
-            if (direction === "right_up") {
-                movement (el, 39);
-                el = $table.find('td[index='+index+']');
-                movement (el, 38);
-                el = $table.find('td[index='+index+']');
-            }            
+            movement (el, direction);
+            el = $table.find('td[index='+index+']');                  
         }, pace, el);
         intervals[index] = interval;
     };

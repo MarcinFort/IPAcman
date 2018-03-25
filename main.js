@@ -217,7 +217,7 @@ $(document).ready(() => {
             let random_number = (Math.floor(Math.random()*3));
             let newDirection;
             switch (elDirection) {
-                case 37:
+                case '37':
                     if (random_number === 0) {
                         newDirection = 'UpRight';
                     } else if (random_number === 1) {
@@ -226,7 +226,7 @@ $(document).ready(() => {
                         newDirection = 'DownRight';
                     }
                     break;
-                case 38:
+                case '38':
                     if (random_number === 0) {
                         newDirection = 'DownLeft';
                     } else if (random_number === 1) {
@@ -235,7 +235,7 @@ $(document).ready(() => {
                         newDirection = 'DownRight';
                     }
                     break;
-                case 39:
+                case '39':
                     if (random_number === 0) {
                         newDirection = 'UpLeft';
                     } else if (random_number === 1) {
@@ -244,7 +244,7 @@ $(document).ready(() => {
                         newDirection = 'DownLeft';
                     }
                     break;
-                case 40:
+                case '40':
                     if (random_number === 0) {
                         newDirection = 'UpLeft';
                     } else if (random_number === 1) {
@@ -292,16 +292,13 @@ $(document).ready(() => {
             }
             return newDirection;
         }
-        console.log(get_a_new_direction(40));
         // Handle phoneme vs. wall contact
 
         if (target.length === 0 && el.hasClass("phoneme")) {
             let elIndex = el.attr("index");
-            clearInterval(intervals[elIndex]);
             let elDirection = el.attr("direction");
-            console.log(elDirection);
+            clearInterval(intervals[elIndex]);
             let newDirection = get_a_new_direction(elDirection);
-            console.log(newDirection);
             el.attr("direction", newDirection);
             set_movement_interval(el, newDirection, pace);
             return;
@@ -310,14 +307,18 @@ $(document).ready(() => {
         // Handle phoneme vs. phoneme contact
         
         if (el.hasClass("phoneme") && target.hasClass("phoneme")) {
-            el.removeClass("direction_0 direction_1 direction_2 direction_3");
-            target.removeClass("direction_0 direction_1 direction_2 direction_3");
+            let elDirection = el.attr("direction");
+            let targetDirection = target.attr("direction");
+            let newElDirection = get_a_new_direction(elDirection);
+            let newTargetDirection = get_a_new_direction(targetDirection);
+            el.attr("direction", newElDirection);
+            target.attr("direction", newTargetDirection);
             let elIndex = el.attr("index");
             clearInterval(intervals[elIndex]);
             let targetIndex = target.attr("index");
             clearInterval(intervals[targetIndex]);
-            set_a_phoneme_in_motion(el);
-            set_a_phoneme_in_motion(target);
+            set_movement_interval(el, newElDirection, pace);
+            set_movement_interval(target, newTargetDirection, pace);
             return;
         }
 
@@ -485,6 +486,5 @@ $(document).ready(() => {
     const new_phoneme_on_the_board = () => {
         put_a_phoneme_on_the_board(generate_random_phoneme("any"));
     }
-
 
 });

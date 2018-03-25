@@ -326,47 +326,47 @@ export const questions = [
     },
 
     {
-        question: "a front vowel",
+        question: "a front monophthong",
         classes: ["front"]
     },
 
     {
-        question: "a central vowel",
+        question: "a central monophthong",
         classes: ["central"]
     },
 
     {
-        question: "a back vowel",
+        question: "a back monophthong",
         classes: ["back"]
     },
 
     {
-        question: "a close vowel",
+        question: "a close monophthong",
         classes: ["close"]
     },
 
     {
-        question: "a mid vowel",
+        question: "a mid monophthong",
         classes: ["mid"]
     },
 
     {
-        question: "an open vowel",
+        question: "an open monophthong",
         classes: ["open"]
     },
 
     {
-        question: "a rounded vowel",
+        question: "a rounded monophthong",
         classes: ["rounded"]
     },
 
     {
-        question: "an unrounded vowel",
+        question: "an unrounded monophthong",
         classes: ["unrounded"]
     },    
 
     {
-        question: "a short vowel",
+        question: "a short monophthong",
         classes: ["short"]
     },
 
@@ -376,12 +376,17 @@ export const questions = [
     },
 
     {
-        question: "a lax vowel",
+        question: "a long monophthong",
+        classes: ["tense"]
+    },
+
+    {
+        question: "a lax monophthong",
         classes: ["lax"]
     },
 
     {
-        question: "a tense vowel",
+        question: "a tense monophthong",
         classes: ["tense"]
     },
 
@@ -396,87 +401,87 @@ export const questions = [
     },
 
     {
-        question: "a front close vowel",
+        question: "a front close monophthong",
         classes: ["i:", "I"]
     },
 
     {
-        question: "a front close long vowel",
+        question: "a front close long monophthong",
         classes: ["i:"]
     },
 
     {
-        question: "a front close short vowel",
+        question: "a front close short monophthong",
         classes: ["I"]
     },
 
     {
-        question: "a front mid vowel",
+        question: "a front mid monophthong",
         classes: ["e"]
     },
 
     {
-        question: "a front open vowel",
+        question: "a front open monophthong",
         classes: ["{"]
     },
 
     {
-        question: "a front short vowel",
+        question: "a front short monophthong",
         classes: ["I", "{", "e"]
     },    
 
     {
-        question: "a central mid vowel",
+        question: "a central mid monophthong",
         classes: ["@", "3:"]
     },
 
     {
-        question: "a central mid reduced vowel",
+        question: "a central mid reduced monophthong",
         classes: ["@"]
     },
 
     {
-        question: "a central mid long vowel",
+        question: "a central mid long monophthong",
         classes: ["3:"]
     },    
 
     {
-        question: "a central open vowel",
+        question: "a central open monophthong",
         classes: ["V"]
     },
 
     {
-        question: "a back close vowel",
+        question: "a back close monophthong",
         classes: ["U", "u:"]
     },
 
     {
-        question: "a back close short vowel",
+        question: "a back close short monophthong",
         classes: ["U"]
     },
 
     {
-        question: "a back close long vowel",
+        question: "a back close long monophthong",
         classes: ["u:"]
     },    
 
     {
-        question: "a back mid vowel",
+        question: "a back mid monophthong",
         classes: ["O:"]
     },
 
     {
-        question: "a back open long vowel",
+        question: "a back open long monophthong",
         classes: ["A:"]
     },
 
     {
-        question: "a back rounded vowel",
+        question: "a back rounded monophthong",
         classes: ["u:", "U", "O:", "Q"]
     },
     
     {
-        question: "a back open short vowel",
+        question: "a back open short monophthong",
         classes: ["Q"]
     }
 ]

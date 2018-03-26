@@ -60,7 +60,7 @@ export const consonants = [
     place: "dental",
     manner: "fricative",
     category: "obstruent",
-    voice: "voiceless"
+    voice: "voiced"
 },
 
 {

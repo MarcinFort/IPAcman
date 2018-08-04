@@ -129,3 +129,7 @@ select, input {
     padding-bottom: 15px;
     text-align: center;
 }
+
+select, input, #start_button {
+    cursor: pointer;
+}

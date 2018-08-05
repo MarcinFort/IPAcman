@@ -142,13 +142,25 @@ $(document).ready(() => {
             case 37:
                 target = moveLeft(el);
                 break;
+            case 72:
+                target = moveLeft(el);
+                break;
             case 38:
+                target = moveUp(el);
+                break;
+            case 75:
                 target = moveUp(el);
                 break;
             case 39:
                 target = moveRight(el);
                 break;
+            case 76:
+                target = moveRight(el);
+                break;
             case 40:
+                target = moveDown(el);
+                break;
+            case 74:
                 target = moveDown(el);
                 break;
             case 'UpLeft':
@@ -356,18 +368,30 @@ $(document).ready(() => {
         if (game) {
             let $pacman = $('.pacman');
             let elClass2;
-            if (e.keyCode > 36 && e.keyCode < 41) {
+            if ((e.keyCode > 36 && e.keyCode < 41) || (e.keyCode === 72) || (e.keyCode > 73 && e.keyCode < 77)) {
                 e.preventDefault();
                 $pacman.removeClass('left right up down');
                 switch(e.keyCode) {
                     case 37:
                         elClass2 = 'left';
                         break;
+                    case 72:
+                        elClass2 = 'left';
+                        break;  
                     case 38:
+                        elClass2 = 'up';
+                        break;
+                    case 75:
                         elClass2 = 'up';
                         break;
                     case 39:
                         elClass2 = 'right';
+                        break;
+                    case 76:
+                        elClass2 = 'right';
+                        break;
+                    case 74:
+                        elClass2 = 'down';
                         break;
                     default:
                         elClass2 = 'down';

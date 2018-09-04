@@ -92,7 +92,7 @@ $(document).ready(() => {
         let username = prompt(`GAME OVER. Your final score is ${score}. Name: `);
         if (!username) { username = "Anonymous" };
         best_score.push({user: username, score: score});
-        best_score.sort((a, b) => a.score < b.score);
+        best_score.sort((a, b) => b.score - a.score);
         localStorage.setItem(`ipacman-best-score-${pace}`, JSON.stringify(best_score));
         populate_leaderboard();
     }

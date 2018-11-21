@@ -80,7 +80,7 @@ select, input {
 
 #logo {
     font-size: 50px;
-    font-family: fantasy;
+    font-family: monospace;
     padding-top: 30px;
     padding-bottom: 25px;
 }
